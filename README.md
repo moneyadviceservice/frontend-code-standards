@@ -19,10 +19,18 @@ We use the HTML5 Doctype and HTML5 features when appropriate.
 
 We test our markup against the [W3C validator](http://validator.w3.org/), to ensure that the markup is well formed. 100% valid code is not essential, but validation helps to write more maintainable, accessible, robust sites as well as debugging code.
 
+#### Quoting Attributes
+The HTML5 specification defines quotes around attributes as optional. For consistency with attributes that accept whitespace, all attributes should be quoted.
+
+	<p class="line note" data-attribute="106">This is my paragraph of special text.</p>
+
+
 ### Doctype
-We use the HTML5 doctype
+We use the HTML5 doctype. 
 	
 	<!DOCTYPE html>
+
+This means we can use WAI-ARIA and mirodata and validate our pages. This also triggers standards mode in your browser.
 
 ### Character Encoding
 All markup should be delivered as UTF-8, as its the most friendly for internationalization.
@@ -31,12 +39,12 @@ We specify it in the head of the document
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
 ### General Markup Guidelines
-* Use [html5shiv](https://code.google.com/p/html5shiv/) to ensure html5 element work older version of Internet Explore (pre IE 9)
 * Use semantic markup.  Start by making sure your content is in the correct/logical order in your html document.  Then select the most appropriate html elements and wai-aria attributes to mark the content up.
 * Specifying the language of content via the lang attribute - e.g `'lang="en-GB"'` which ensures content is read out correctly by screenreaders
 * Use a hierarchical heading structure to help screen reader users navigate a page
 * For links use a link `<a>` - a link takes you to content on the same or another page
 * For buttons use a `<button>` - a button performs an action such as opening a widget or playing a video/animation
+
 
 ### WAI-ARIA
 
@@ -56,6 +64,8 @@ We specify it in the head of the document
 	* Instead of using content semantics for class names (e.g news) uses intention and design patterns semantics (e.g promo-box and carousel) to ensure reusability
 	* Style classes (.subheading) instead of elements (h2) to promote reusablity and reduce tying design to document structure (which is very brittle)
 * Use Sass to make your CSS more maintainable
+ 
+ <!-- add something about using .no-js and .js-enhanced classes on the body element to enable contextual styling   -->
 	
 
 ### Web Typography
@@ -72,7 +82,10 @@ We should be using the latest version of jQuery 1.x which is currently 1.10.2
 
 *Note: It looks like we are currently using a few (older) versions on the website.  We should improve this so they are all using the same CDN'd version, so user have a higher chance of it already being cached in there browser.*
 
+Use [html5shiv](https://code.google.com/p/html5shiv/) to ensure html5 element work in older version of Internet Explore (pre IE 9)
+
 ### General Coding Principles
+
 * Touch the DOM as little as possible as it is VERY slow - instead cache nodelists and insert html as few times as possible
 
 ## Accessibility
