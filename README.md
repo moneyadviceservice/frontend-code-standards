@@ -63,8 +63,35 @@ content coming soon
 ## Accessibility
 All web pages and interfaces must comply to [Web Content Accessibility Guidelines](http://www.w3.org/TR/WCAG/) (WCAG) 2.0 AA standard both to the letter and in spirit.
 
+The four characteristics of web accessibility are:
+
+* Percievable
+* Operable
+* Understandable
+* Robust
+
+14 common accessibility blunders are:
+
+* Content not being in the most logical order in the document
+* Not using alternative text that conveys the meaning of an image appropriately
+* Not having text alternative for multiplemedia content -i.e captions and transcipts
+* Using jargon and complicated language instead of simple language.
+* Not using headings correctly.  The single h1 one of the page should be the page title. Other headings should be hierachical and allow a screen reader user to get an overview of the content on a page
+* Failing to use the most appropriate semantic elements to mark up content
+* Using too many lists and headings  which add aural clutter to screen reader users
+* Failing to mark up forms correctly
+* Communicating information by colour alone  which will not be percieved by colour bind users.
+* Not having a visual state that shows when a element has focus
+* Only communicating states and actions visually - e.g selected, open, close. This also needs to be in the markup.
+* Failing to allow a keyboard user to access all content and functionally on a page - usually by using incorrect html elements, e.g spans and divs instead of links or buttons or by introducing keyboard traps with javascript
+* Failing to inform a screen reader user when content dynamically updates on a page
+* Failing to set focus when dynamic content is loaded such as a modal box and not enabling a keyboard user to close such content.
+ 
 We should be following GOV.UKs lead who have done extensive accessibility testing: [https://www.gov.uk/service-manual/user-centered-design/accessibility](https://www.gov.uk/service-manual/user-centered-design/accessibility)
 
+### Resources
+* [WebAim](http://webaim.org/) - Information, training, resources, guidelines and standards for Web accessibility and disability access to the Web.
+* [Draft BBC Mobile Accessibility Guidleines](http://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile_access.shtml)
 
 ## Performance
 Reduce http requests by using sprites or data uris and concatenate css and javascript files
