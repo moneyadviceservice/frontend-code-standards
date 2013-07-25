@@ -11,7 +11,7 @@ This document's primary motivation is two- fold: 1) code consistency and 2) best
 * Markup should be well-formed, semantically correct and generally valid.
 * Javascript should progressively enhance the experience.
 
-Where possible follow the principles of [progressive enhancement](https://www.gov.uk/service-manual/making-software/progressive-enhancement.html). Start by making sure your content is in the correct/logical order.  Then select the most appropriate html elements and wai-aria atributes to mark the content up.  Then apply css styles taking care to not introduce accessibility barriers. Finally add javascript and ensure you allow full keyboard access and keep screen reader users informed of dynamic content changes. Where progressive enhancement isn't possible or pramatic it is still important to ensure that javascript is made accessible.
+Where possible follow the principles of [progressive enhancement](https://www.gov.uk/service-manual/making-software/progressive-enhancement.html). Start by making sure your content is in the correct/logical order.  Then select the most appropriate html elements and wai-aria atributes to mark the content up and ensure that core functionality works using HTTP (i.e links and forms). Then add images and apply css styles taking care to not introduce accessibility barriers. Finally add javascript and ensure you allow full keyboard access and keep screen reader users informed of dynamic content changes. Where progressive enhancement isn't possible or pramatic it is still important to use semantic markup and to ensure that javascript is made accessible.
 
 ## Markup
 ### HTML5
