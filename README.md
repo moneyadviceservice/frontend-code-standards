@@ -91,14 +91,30 @@ Use [html5shiv](https://code.google.com/p/html5shiv/) to ensure html5 element wo
 ## Accessibility
 All web pages and interfaces must comply to [Web Content Accessibility Guidelines](http://www.w3.org/TR/WCAG/) (WCAG) 2.0 AA standard both to the letter and in spirit.
 
-The four characteristics of web accessibility are:
+### The four characteristics of accessible web content are:
 
-* Percievable
-* Operable
-* Understandable
-* Robust
+#### Perceivable
+* Provide text alternatives for non-text content.
+* Provide captions and other alternatives for multimedia.
+* Create content that can be presented in different ways,
+including by assistive technologies, without losing meaning.
+* Make it easier for users to see and hear content.
 
-14 common accessibility blunders are:
+#### Operable
+* Make all functionality available from a keyboard.
+* Give users enough time to read and use content.
+* Do not use content that causes seizures.
+* Help users navigate and find content.
+
+#### Understandable
+* Make text readable and understandable.
+* Make content appear and operate in predictable ways.
+* Help users avoid and correct mistakes.
+
+#### Robust
+* Maximize compatibility with current and future user tools.
+
+### Common accessibility blunders are:
 
 * Content not being in the most logical order in the document
 * Not using alternative text that conveys the meaning of an image appropriately
