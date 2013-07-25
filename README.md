@@ -133,11 +133,15 @@ Yahoo's Exceptional Performance team has identified a number of [best practices 
 <li><a href="http://developer.yahoo.com/performance/rules.html#cookie_size">Reduce Cookie Size</a></li>
 <li><a href="http://developer.yahoo.com/performance/rules.html#cookie_free">Use Cookie-Free Domains for Components</a></li>
 <li><a href="http://developer.yahoo.com/performance/rules.html#no_filters">Avoid Filters</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#no_scale">Do Not Scale Images in HTML</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#no_scale">Do Not Scale Images in HTML</a> - <i>note: dated due to responsive</i></li>
 <li><a href="http://developer.yahoo.com/performance/rules.html#favicon">Make favicon.ico Small and Cacheable</a></li>
 </ol>
 
-
+### Other tools to help you measure and improve performance are:
+* [jsperf](http://jsperf.com/)
+* [boomerang](http://yahoo.github.io/boomerang/doc/) - End user oriented web performance testing and beaconing
+* In browser waterfall UI - found in Chrome (best), also Safari, Firebug, IE and Opera
+* [Performance Tools](http://www.stevesouders.com/blog/2012/10/09/webperfdays-performance-tools/) - stevesouders.com
 
 ## Browser Testing and Support
 
@@ -175,9 +179,9 @@ The following browser support standards and guidelines seek to address the trade
 |  Opera  |  9.6x, 10  |   Mac/Windows  |
 
 
-*Note: This needs updating as I believe our content should usable in older browsers too (even if it doesn't look pretty!) - we should be using Progressive Enhancement rather than gracefull degradation.  We should be following the same approach as GOV.UK, see: [https://www.gov.uk/service-manual/user-centered-design/browsers-and-devices](https://www.gov.uk/service-manual/user-centered-design/browsers-and-devices)*
+*Note: This needs updating as I believe our content should usable in older browsers too (even if it doesn't look pretty!) - we should be using Progressive Enhancement rather than gracefull degradation.  IE10 should also be a primary browser. We need to start thinking about mobile devices too.*
 
-*IE10 should also be a primary browser. We need to start thinking about mobile devices too.*
+*We should be following the same approach as GOV.UK, see: [https://www.gov.uk/service-manual/user-centered-design/browsers-and-devices](https://www.gov.uk/service-manual/user-centered-design/browsers-and-devices)*
 
 
 ## Search Engine Optimisation
