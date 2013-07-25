@@ -60,7 +60,7 @@ We specify it in the head of the document
 * Any style you apply to :hover also apply to :focus so that keyboard users get the same visual cues
 * Utilise learnings from [Object Oriented CSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) (OCSS) and [Scalable and Module Architecture for CSS](http://smacss.com/) (SMACSS)
 	* Do not make your styles too specific
-	* Don't stylw IDs, style classes instead (keeps specificty low and promotes reusability)
+	* Don't style IDs, style classes instead (keeps specificty low and promotes reusability)
 	* Instead of using content semantics for class names (e.g news) uses intention and design patterns semantics (e.g promo-box and carousel) to ensure reusability
 	* Style classes (.subheading) instead of elements (h2) to promote reusablity and reduce tying design to document structure (which is very brittle)
 * Use Sass to make your CSS more maintainable
