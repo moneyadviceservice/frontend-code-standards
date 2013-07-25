@@ -112,7 +112,7 @@ We should be following GOV.UKs lead who have done extensive accessibility testin
 Yahoo's Exceptional Performance team has identified a number of [best practices for making web pages fast](http://developer.yahoo.com/performance/rules.html). The list includes 35 best practices divided into 7 categories. 23 of these can be checked using the [YSlow](http://yslow.org/) tool:
 
 <ol>
-<li><a href="http://developer.yahoo.com/performance/rules.html#num_http">Minimize HTTP Requests</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#num_http">Minimize HTTP Requests</a> - use css sprites, data uris and concatenate CSS and JS files</li>
 <li><a href="http://developer.yahoo.com/performance/rules.html#cdn">Use a Content Delivery Network</a></li>
 <li><a href="http://developer.yahoo.com/performance/rules.html#emptysrc">Avoid empty src or href</a></li>
 <li><a href="http://developer.yahoo.com/performance/rules.html#expires">Add an Expires or a Cache-Control Header</a></li>
