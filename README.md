@@ -70,7 +70,7 @@ Our library of choice is [jQuery](http://jquery.com/)
 
 We should be using the latest version of jQuery 1.x which is currently 1.10.2
 
-It looks like we are currently using a few (older) versions on the website.  We should improve this so they are all using the same CDN'd version, so user have a higher chance of it already being cached in there browser.
+*Note: It looks like we are currently using a few (older) versions on the website.  We should improve this so they are all using the same CDN'd version, so user have a higher chance of it already being cached in there browser.*
 
 ### General Coding Principles
 * Touch the DOM as little as possible as it is VERY slow - instead cache nodelists and insert html as few times as possible
@@ -175,9 +175,9 @@ The following browser support standards and guidelines seek to address the trade
 |  Opera  |  9.6x, 10  |   Mac/Windows  |
 
 
-Note: This needs updating as I believe our content should usable in older browsers too (even if it doesn't look pretty!) - we should be using Progressive Enhancement rather than gracefull degradation.  We should be following the same approach as GOV.UK, see: [https://www.gov.uk/service-manual/user-centered-design/browsers-and-devices](https://www.gov.uk/service-manual/user-centered-design/browsers-and-devices)
+*Note: This needs updating as I believe our content should usable in older browsers too (even if it doesn't look pretty!) - we should be using Progressive Enhancement rather than gracefull degradation.  We should be following the same approach as GOV.UK, see: [https://www.gov.uk/service-manual/user-centered-design/browsers-and-devices](https://www.gov.uk/service-manual/user-centered-design/browsers-and-devices)*
 
-IE10 should also be a primary browser. We need to start thinking about mobile devices too.
+*IE10 should also be a primary browser. We need to start thinking about mobile devices too.*
 
 
 ## Search Engine Optimisation
