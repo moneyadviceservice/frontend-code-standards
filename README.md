@@ -1,9 +1,9 @@
 # Front-end Code Standards &amp; Best Practice
 
 
-This document contains guidelines for web pages and applications built by the Money Advice Service development team. It is inspired/based on [http://isobar-idev.github.io/code-standards/](http://isobar-idev.github.io/code-standards/) but with amends and additions as we see fit. It is a living document that will be continually updated and improved.
+This document contains guidelines for web pages and applications built by the Money Advice Service development team. It is inspired/based on [http://isobar-idev.github.io/code-standards/](http://isobar-idev.github.io/code-standards/) but with amends, deletions and additions as we see fit. It is a living document that will be continually updated and improved.
 
-This document's primary motivation is two- fold: 1) code consistency and 2) best practices. By maintaining consistency in coding styles and conventions, we can ease the burden of legacy code maintenance, and mitigate risk of breakage in the future. By adhering to best practices, we ensure optimized page loading, performance and maintainable code.
+This document's primary motivation is two- fold: 1) code consistency and 2) best practices. By maintaining consistency in coding styles and conventions, we can ease the burden of legacy code maintenance, and mitigate risk of breakage in the future. By adhering to best practices, we ensure optimized page loading, accessibility, performance and maintainable code.
 
 ## General Guidelines
 ### Pillars of Front-end Development
@@ -17,7 +17,7 @@ Where possible follow the principles of [progressive enhancement](https://www.go
 ### HTML5
 We use the HTML5 Doctype and HTML5 features when appropriate.
 
-We test our markup against the W3C validator, to ensure that the markup is well formed. 100% valid code is not a goal, but validation certainly helps to write more maintainable sites as well as debugging code.
+We test our markup against the [W3C validator](http://validator.w3.org/), to ensure that the markup is well formed. 100% valid code is not essential, but validation helps to write more maintainable, accessible, robust sites as well as debugging code.
 
 ### Doctype
 We use the HTML5 doctype
@@ -33,6 +33,7 @@ We specify it in the head of the document
 ### General Markup Guidelines
 * Use [html5shiv](https://code.google.com/p/html5shiv/) to ensure html5 element work older version of Internet Explore (pre IE 9)
 * Use semantic markup.  Start by making sure your content is in the correct/logical order in your html document.  Then select the most appropriate html elements and wai-aria attributes to mark the content up.
+* Specifying the language of content via the lang attribute - e.g `'lang="en-GB"'` which ensures content is read out correctly by screenreaders
 * Use a hierarchical heading structure to help screen reader users navigate a page
 * For links use a link `<a>` - a link takes you to content on the same or another page
 * For buttons use a `<button>` - a button performs an action such as opening a widget or playing a video/animation
@@ -108,9 +109,35 @@ We should be following GOV.UKs lead who have done extensive accessibility testin
 * [Draft BBC Mobile Accessibility Guidleines](http://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile_access.shtml)
 
 ## Performance
-Reduce http requests by using sprites or data uris and concatenate css and javascript files
+Yahoo's Exceptional Performance team has identified a number of [best practices for making web pages fast](http://developer.yahoo.com/performance/rules.html). The list includes 35 best practices divided into 7 categories. 23 of these can be checked using the [YSlow](http://yslow.org/) tool:
 
-Where possible move your javascript files to the bottom of the page so content can render as quickly as possible.
+<ol>
+<li><a href="http://developer.yahoo.com/performance/rules.html#num_http">Minimize HTTP Requests</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#cdn">Use a Content Delivery Network</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#emptysrc">Avoid empty src or href</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#expires">Add an Expires or a Cache-Control Header</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#gzip">Gzip Components</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#css_top">Put StyleSheets at the Top</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#js_bottom">Put Scripts at the Bottom</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#css_expressions">Avoid CSS Expressions</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#external">Make JavaScript and CSS External</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#dns_lookups">Reduce DNS Lookups</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#minify">Minify JavaScript and CSS</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#redirects">Avoid Redirects</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#js_dupes">Remove Duplicate Scripts</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#etags">Configure ETags</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#cacheajax">Make AJAX Cacheable</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#ajax_get">Use GET for AJAX Requests</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#min_dom">Reduce the Number of DOM Elements</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#no404">No 404s</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#cookie_size">Reduce Cookie Size</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#cookie_free">Use Cookie-Free Domains for Components</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#no_filters">Avoid Filters</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#no_scale">Do Not Scale Images in HTML</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html#favicon">Make favicon.ico Small and Cacheable</a></li>
+</ol>
+
+
 
 ## Browser Testing and Support
 
