@@ -117,7 +117,7 @@ including by assistive technologies, without losing meaning.
 
 ### Common accessibility blunders are:
 
-* Content not being in the most logical order in the document
+* Content not being in the a logical order in the document - as developer has been concentrating on the visual layout
 * Not using alternative text that conveys the meaning of an image appropriately
 * Not having text alternative for multiplemedia content -i.e captions and transcipts
 * Using jargon and complicated language instead of simple language.
