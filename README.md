@@ -71,7 +71,7 @@ Reduce http requests by using sprites or data uris and concatenate css and javas
 
 Where possible move your javascript files to the bottom of the page so content can render as quickly as possible.
 
-### Browser Testing and Support
+## Browser Testing and Support
 
 The MAS aims to provide the best experience for the widest range of customers, whilst also ensuring the efficient and value driven development of features and use of resources. We aim to provide the best experience for the largest number of our core and key customers.
  
@@ -79,7 +79,7 @@ The MAS accepts that the nature of the web medium is such that not all web pages
 
 The following browser support standards and guidelines seek to address the trade-off between experience, reach and resources.
 
-#### Primary Browsers - supported
+### Primary Browsers - supported
 
 * All content must be readable and all functionality must work.
 * Where variations inevitably occur between browsers:
@@ -95,7 +95,7 @@ The following browser support standards and guidelines seek to address the trade
 |  Safari  |  5.1+  |   Mac  |
 
 
-#### Secondary Browsers -  - partially supported
+### Secondary Browsers -  - partially supported
 
 * All main content must be readable and navigation must function.
 * Any degradation to the user experience must not affect the ability of the user to read content.
