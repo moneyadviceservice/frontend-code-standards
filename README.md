@@ -16,6 +16,7 @@ Where possible follow the principles of progressive enhancement. Start by making
 ## Markup
 ### HTML5
 We use the HTML5 Doctype and HTML5 features when appropriate.
+
 We test our markup against the W3C validator, to ensure that the markup is well formed. 100% valid code is not a goal, but validation certainly helps to write more maintainable sites as well as debugging code.
 
 ### Doctype
@@ -63,6 +64,7 @@ content coming soon
 All web pages and interfaces must comply to [Web Content Accessibility Guidelines](http://www.w3.org/TR/WCAG/) (WCAG) 2.0 AA standard both to the letter and in spirit.
 
 We should be following GOV.UKs lead who have done extensive accessibility testing: [https://www.gov.uk/service-manual/user-centered-design/accessibility](https://www.gov.uk/service-manual/user-centered-design/accessibility)
+
 
 ## Performance
 Reduce http requests by using sprites or data uris and concatenate css and javascript files
