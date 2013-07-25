@@ -95,7 +95,7 @@ The following browser support standards and guidelines seek to address the trade
 |  Safari  |  5.1+  |   Mac  |
 
 
-### Secondary Browsers -  - partially supported
+### Secondary Browsers - partially supported
 
 * All main content must be readable and navigation must function.
 * Any degradation to the user experience must not affect the ability of the user to read content.
@@ -108,6 +108,8 @@ The following browser support standards and guidelines seek to address the trade
 
 
 Note: This needs updating as I believe our content should usable in older browsers too (even if it doesn't look pretty!) - we should be using Progressive Enhancement rather than gracefull degradation.  We should be following the same approach as GOV.UK, see: [https://www.gov.uk/service-manual/user-centered-design/browsers-and-devices](https://www.gov.uk/service-manual/user-centered-design/browsers-and-devices)
+
+IE10 should also be a primary browser. We need to start thinking about mobile devices too.
 
 
 ## Search Engine Optimisation
