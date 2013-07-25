@@ -170,7 +170,15 @@ Yahoo's Exceptional Performance team has identified a number of [best practices 
 <li><a href="http://developer.yahoo.com/performance/rules.html#favicon">Make favicon.ico Small and Cacheable</a></li>
 </ol>
 
-### Other tools to help you measure and improve performance are:
+### jQuery Proven Performance Tips And Tricks
+
+[Slides by Addy Osmani](http://addyosmani.com/jqprovenperformance/)
+
+@todo: summarise slides
+
+
+### Tools to help you measure and improve performance are:
+* [YSlow](http://yslow.org/)
 * [jsperf](http://jsperf.com/)
 * [boomerang](http://yahoo.github.io/boomerang/doc/) - End user oriented web performance testing and beaconing
 * In browser waterfall UI - found in Chrome (best), also Safari, Firebug, IE and Opera
