@@ -60,7 +60,7 @@ We specify it in the head of the document
 * Any style you apply to :hover also apply to :focus so that keyboard users get the same visual cues
 * Utilise learnings from [Object Oriented CSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) (OCSS) and [Scalable and Module Architecture for CSS](http://smacss.com/) (SMACSS)
 	* Do not make your styles too specific
-	* Don't styling IDs, style classes instead (keeps specificty low and promotes reusability)
+	* Don't stylw IDs, style classes instead (keeps specificty low and promotes reusability)
 	* Instead of using content semantics for class names (e.g news) uses intention and design patterns semantics (e.g promo-box and carousel) to ensure reusability
 	* Style classes (.subheading) instead of elements (h2) to promote reusablity and reduce tying design to document structure (which is very brittle)
 * Use Sass to make your CSS more maintainable
@@ -109,13 +109,13 @@ The four characteristics of web accessibility are:
 * Using too many lists and headings  which add aural clutter to screen reader users
 * Failing to mark up forms correctly
 * Communicating information by colour alone  which will not be percieved by colour bind users.
-* Not having a visual state that shows when a element has focus
-* Only communicating states and actions visually - e.g selected, open, close. This also needs to be in the markup.
+* Not having a visual state that shows when a element has focus - i.e not styling :focus the same as :hover
+* Only communicating states and actions visually - e.g selected, open, close. This also needs to be in the content/markup layer.
 * Failing to allow a keyboard user to access all content and functionally on a page - usually by using incorrect html elements, e.g spans and divs instead of links or buttons or by introducing keyboard traps with javascript
 * Failing to inform a screen reader user when content dynamically updates on a page
 * Failing to set focus when dynamic content is loaded such as a modal box and not enabling a keyboard user to close such content.
  
-We should be following GOV.UKs lead who have done extensive accessibility testing: [https://www.gov.uk/service-manual/user-centered-design/accessibility](https://www.gov.uk/service-manual/user-centered-design/accessibility)
+*Note: We should be following GOV.UKs lead who have done extensive accessibility testing: [https://www.gov.uk/service-manual/user-centered-design/accessibility](https://www.gov.uk/service-manual/user-centered-design/accessibility)*
 
 ### Resources
 * [WebAim](http://webaim.org/) - Information, training, resources, guidelines and standards for Web accessibility and disability access to the Web.
