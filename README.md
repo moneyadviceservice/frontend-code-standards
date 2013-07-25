@@ -1,7 +1,7 @@
 # Front-end Code Standards &amp; Best Practice
 
 
-This document contains guidelines for web pages and applications built by the Money Advice Service development team. It is inspired/based on [http://isobar-idev.github.io/code-standards/](http://isobar-idev.github.io/code-standards/) but with amends, deletions and additions as we see fit. It is a living document that will be continually updated and improved.
+This document contains guidelines for web pages and applications built by the Money Advice Service development team. It is inspired/based on [http://isobar-idev.github.io/code-standards/](http://isobar-idev.github.io/code-standards/) but with amends, deletions and additions, especially around accessibility. It is a living document that will be continually updated and improved.
 
 This document's primary motivation is two- fold: 1) code consistency and 2) best practices. By maintaining consistency in coding styles and conventions, we can ease the burden of legacy code maintenance, and mitigate risk of breakage in the future. By adhering to best practices, we ensure optimized page loading, accessibility, performance and maintainable code.
 
@@ -63,6 +63,7 @@ We specify it in the head of the document
 	* Don't style IDs, style classes instead (keeps specificty low and promotes reusability)
 	* Instead of using content semantics for class names (e.g news) uses intention and design patterns semantics (e.g promo-box and carousel) to ensure reusability
 	* Style classes (.subheading) instead of elements (h2) to promote reusablity and reduce tying design to document structure (which is very brittle)
+	* *NOTE: these apply to large sites rather than small sites/features*
 	* @todo: finish this list and add link to video
 * Use Sass to make your CSS more maintainable
  
