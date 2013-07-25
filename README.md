@@ -109,6 +109,8 @@ We should be following GOV.UKs lead who have done extensive accessibility testin
 * [Draft BBC Mobile Accessibility Guidleines](http://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile_access.shtml)
 
 ## Performance
+A slow website results in a poor user experience. Most of web page performance is affected by front-end engineering, that is, the user interface design and development.
+
 Yahoo's Exceptional Performance team has identified a number of [best practices for making web pages fast](http://developer.yahoo.com/performance/rules.html). The list includes 35 best practices divided into 7 categories. 23 of these can be checked using the [YSlow](http://yslow.org/) tool:
 
 <ol>
