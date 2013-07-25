@@ -59,10 +59,11 @@ We specify it in the head of the document
 * Do not use presentational class names such as 'green'
 * Any style you apply to :hover also apply to :focus so that keyboard users get the same visual cues
 * Utilise learnings from [Object Oriented CSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) (OCSS) and [Scalable and Module Architecture for CSS](http://smacss.com/) (SMACSS)
-	* Do not make your styles too specific
+	* Do not make your styles too specific - specifity wars are a maintanence nightmare!
 	* Don't style IDs, style classes instead (keeps specificty low and promotes reusability)
 	* Instead of using content semantics for class names (e.g news) uses intention and design patterns semantics (e.g promo-box and carousel) to ensure reusability
 	* Style classes (.subheading) instead of elements (h2) to promote reusablity and reduce tying design to document structure (which is very brittle)
+	* @todo: finish this list and add link to video
 * Use Sass to make your CSS more maintainable
  
  <!-- add something about using .no-js and .js-enhanced classes on the body element to enable contextual styling   -->
