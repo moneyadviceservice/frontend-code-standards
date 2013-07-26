@@ -121,9 +121,11 @@ including by assistive technologies, without losing meaning.
 * Content not being in the a logical order in the document - as developer has been concentrating on the visual layout
 * Not using alternative text that conveys the meaning of an image appropriately
 * Not having text alternative for multiplemedia content -i.e captions and transcipts
+* Using duplicated link text that makes no sense out of content - e.g read more, click here
 * Using jargon and complicated language instead of simple language.
 * Not using headings correctly.  The single h1 one of the page should be the page title. Other headings should be hierachical and allow a screen reader user to get an overview of the content on a page
 * Failing to use the most appropriate semantic elements to mark up content
+* Having duplicate links in close proximity - e.g wrapping an image and some text in different links that go to the same destination. Use a single link instead.
 * Using too many lists and headings  which add aural clutter to screen reader users
 * Failing to mark up forms correctly
 * Communicating information by colour alone  which will not be percieved by colour bind users.
