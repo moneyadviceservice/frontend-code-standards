@@ -13,17 +13,27 @@ This document's primary motivation is two- fold: 1) code consistency and 2) best
 
 Where possible follow the principles of [progressive enhancement](https://www.gov.uk/service-manual/making-software/progressive-enhancement.html). Start by making sure your content is in the correct/logical order.  Then select the most appropriate html elements and wai-aria atributes to mark the content up and ensure that core functionality works using HTTP (i.e links and forms). Then add images and apply css styles taking care to not introduce accessibility barriers. Finally add javascript and ensure you allow full keyboard access and keep screen reader users informed of what is being communicated to sighted users (e.g state and dynamic content changes). Where progressive enhancement isn't possible or pramatic it is still important to use semantic markup and to ensure that javascript is made accessible.
 
+### General Practices
+
+#### Indentation
+To be discussed
+
+#### Readability vs Compression
+We prefer readability over file-size savings when it comes to maintaining existing files. Plenty of whitespace is encouraged where appropriate. There is no need for any developer to purposefully compress HTML or CSS, nor obfuscate JavaScript.
+
+We will use server-side or build processes to automatically minify and gzip all static client-side files, such as CSS and JavaScript.
+
+
 ## Markup
 ### HTML5
 We use the HTML5 Doctype and HTML5 features when appropriate.
 
-We test our markup against the [W3C validator](http://validator.w3.org/), to ensure that the markup is well formed. 100% valid code is not essential, but validation helps to write more maintainable, accessible, robust sites as well as debugging code.
+We test our markup against the [W3C validator](http://validator.w3.org/), to ensure that the markup is well formed. Valid html helps to write more maintainable, accessible, robust sites as well as debugging code.
 
 #### Quoting Attributes
 The HTML5 specification defines quotes around attributes as optional. For consistency with attributes that accept whitespace, all attributes should be quoted.
 
 	<p class="line note" data-attribute="106">This is my paragraph of special text.</p>
-
 
 ### Doctype
 We use the HTML5 doctype. 
@@ -37,14 +47,28 @@ All markup should be delivered as UTF-8, as its the most friendly for internatio
 We specify it in the head of the document
 
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	
+### Quoting Attributes
+The HTML5 specification defines quotes around attributes as optional. For consistency with attributes that accept whitespace, all attributes should be quoted.
 
 ### General Markup Guidelines
-* Use semantic markup.  Start by making sure your content is in the correct/logical order in your html document.  Then select the most appropriate html elements and wai-aria attributes to mark the content up.
-* Specifying the language of content via the lang attribute - e.g `'lang="en-GB"'` which ensures content is read out correctly by screenreaders
-* Use a hierarchical heading structure to help screen reader users navigate a page
+The following are general guidelines for structuring your HTML markup. Authors are reminded to always use markup which represents the semantics of the content in the document being created.
+Start by making sure your content is in the correct/logical order in your html document.  Then select the most appropriate html elements and wai-aria attributes to mark the content up.
+
+* Specifying the language of content via the lang attribute - e.g `'lang="en-GB"'` which ensures content is read out correctly by screenreaders.
+* Each page should have a unique H1 which should be the page or article title.
+* Use a hierarchical heading structure to help screen reader users navigate a page.
+* Use actual P elements for paragraph delimiters as opposed to multiple BR tags.
 * For links use a link `<a>` - a link takes you to content on the same or another page
 * For buttons use a `<button>` - a button performs an action such as opening a widget or playing a video/animation
-
+* Use `label` fields to label each form field, the `for` attribute should associate itself with the `id` of the input field, so users can click the labels.
+* Do not use the size attribute on your input fields. The size attribute is relative to the font-size of the text inside the input. Instead use css width.
+* Tables are not be used for page layout.
+* Use microformats and/or Microdata where appropriate, specifically hCard and adr.
+* Make use of THEAD, TBODY, CAPTIONS and TH tags (and Scope attribute) when marking up tables.
+* Always use title-case for headers and titles. Do not use all caps or all lowercase titles in markup, instead apply the CSS property `text-transform:uppercase/lowercase`.
+* Utilise the new HTML5 elements such as `header`, `nav`, `section`, `article`, `aside`, `footer` - but ensure you are using a [html5shiv](https://code.google.com/p/html5shiv/) so they can be styled in IE6,7,8
+* Keep the DOM as simple as possible
 
 ### WAI-ARIA
 
