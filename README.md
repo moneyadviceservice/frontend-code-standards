@@ -35,7 +35,7 @@ The HTML5 specification defines quotes around attributes as optional. For consis
 
 	<p class="line note" data-attribute="106">This is my paragraph of special text.</p>
 
-### Doctype
+#### Doctype
 We use the HTML5 doctype. 
 	
 	<!DOCTYPE html>
@@ -48,9 +48,6 @@ We specify it in the head of the document
 
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	
-### Quoting Attributes
-The HTML5 specification defines quotes around attributes as optional. For consistency with attributes that accept whitespace, all attributes should be quoted.
-
 ### General Markup Guidelines
 The following are general guidelines for structuring your HTML markup. Authors are reminded to always use markup which represents the semantics of the content in the document being created.
 Start by making sure your content is in the correct/logical order in your html document.  Then select the most appropriate html elements and wai-aria attributes to mark the content up.
