@@ -1,4 +1,4 @@
-# Front-end Code Standards &amp; Best Practice
+# Front-End Code Standards
 
 
 This document contains guidelines for web pages and applications built by the Money Advice Service development team. It is based on [http://isobar-idev.github.io/code-standards/](http://isobar-idev.github.io/code-standards/) but with amendments, deletions and additions, especially concerning accessibility.
@@ -18,7 +18,7 @@ Where possible follow the principles of [progressive enhancement](https://www.go
 ### General Practices
 
 #### Indentation
-To be discussed
+The Money Advice Service indents all code by 2 spaces. There is no technical reason behind this practice, it simply minimises horizontal whitespace and sets up a standard for the development team to adhere to.
 
 #### Readability vs Compression
 We prefer readability over file-size savings when it comes to maintaining existing files. Plenty of whitespace is encouraged where appropriate. There is no need for any developer to purposefully compress HTML or CSS, nor obfuscate JavaScript.
@@ -99,6 +99,40 @@ Start by making sure your content is in the correct/logical order in your html d
 
  <!-- add something about using .no-js and .js-enhanced classes on the body element to enable contextual styling   -->
 
+### Sass Preprocessor
+The Money Advice Service operates a Ruby on Rails environment and as such we write all our CSS using the Sass preprocessor language.
+
+To avoid deviating to far from the normal CSS syntax we use .scss, rather than the .sass variant.
+
+We follow the Sass communities "[Inception Rule](http://thesassway.com/beginner/the-inception-rule)" that advises that you should not nest your SCSS more than four levels deep.
+
+Ideally you should aim for two levels of nesting which gives enough flexibility for selectors and their accompanying pseudo-states (i.e :hover).
+
+Nesting selectors more than three levels deep, while tempting, causes verbose and unwieldly CSS to be constructed on compile.
+
+### Naming Conventions (Classes & IDs)
+
+We follow the BEM (block, element, modifier) naming convention for assigning clear, conscise and semantic classes to our HTML elements.
+
+An explanation of BEM can be found on [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) but in short following this pattern:
+
+.block{}
+.block__element{}
+.block--modifier{}
+
+.block represents the higher level of an abstraction or component.
+.block__element represents a descendent of .block that helps form the .block object.
+.block--modifier represents a different state or version of .block.
+
+A practical example of this is:
+
+.site-search{} /* Block */
+.site-search__field{} /* Element */
+.site-search--full{} /* Modifier */
+
+As noted in the CSS Wizardry article HTML elements marked up with the BEM naming convention can appear "ugly" and verbose. However, where they excell is in their readbility and their contribution to maintainable code.
+
+However, please note that the BEM naming style does not need to be used for elements that have no relationship to parent elements or sit on their own. Remember that BEM is used to clarify code, not to be adhered to without question.
 
 ### Web Typography
 content coming soon
