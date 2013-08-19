@@ -50,7 +50,7 @@ All markup should be delivered as UTF-8, as it's the most friendly for internati
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
 ### General Markup Guidelines
-<<<<<<< HEAD
+
 The following are general guidelines for structuring your HTML markup. Authors are reminded to always use markup which represents the semantics of the content in the document being created.
 Start by making sure your content is in the correct/logical order in your html document.  Then select the most appropriate html elements and wai-aria attributes to mark the content up.
 
@@ -68,15 +68,12 @@ Start by making sure your content is in the correct/logical order in your html d
 * Always use title-case for headers and titles. Do not use all caps or all lowercase titles in markup, instead apply the CSS property `text-transform:uppercase/lowercase`.
 * Utilise the new HTML5 elements such as `header`, `nav`, `section`, `article`, `aside`, `footer` - but ensure you are using a [html5shiv](https://code.google.com/p/html5shiv/) so they can be styled in IE6,7,8
 * Keep the DOM as simple as possible
-=======
 * Use semantic markup.
 * Start by making sure your content is in the correct and most logical order in your document before surrounding it with HTML tags. Then select the most appropriate HTML elements and wai-aria attributes to mark up the content.
 * Specify the language of content via the lang attribute - e.g `'lang="en-GB"'` which ensures content is read out correctly by screenreaders.
 * Use a hierarchical heading structure to help screen reader users navigate a page.
 * For links use a link `<a>` - a link takes you to content on the same or another page.
 * For buttons use a `<button>` - a button performs an action such as opening a widget or playing a video/animation.
-
->>>>>>> Review of FECS document for spelling and readability. Minor edits to content.
 
 ### WAI-ARIA
 
@@ -151,20 +148,6 @@ including by assistive technologies, without losing meaning.
 
 ### Common accessibility blunders are:
 
-<<<<<<< HEAD
-* Content not being in the a logical order in the document - as developer has been concentrating on the visual layout
-* Not using alternative text that conveys the meaning of an image appropriately
-* Not having text alternative for multiplemedia content -i.e captions and transcipts
-* Using duplicated link text that makes no sense out of content - e.g read more, click here
-* Using jargon and complicated language instead of simple language.
-* Not using headings correctly.  The single h1 one of the page should be the page title. Other headings should be hierachical and allow a screen reader user to get an overview of the content on a page
-* Failing to use the most appropriate semantic elements to mark up content
-* Having duplicate links in close proximity - e.g wrapping an image and some text in different links that go to the same destination. Use a single link instead.
-* Using too many lists and headings  which add aural clutter to screen reader users
-* Failing to mark up forms correctly
-* Communicating information by colour alone  which will not be percieved by colour bind users.
-* Not having a visual state that shows when a element has focus - i.e not styling :focus the same as :hover
-=======
 * Content not being in a logical order in the document - as a developer has been concentrating on the visual layout rather then the content heirarchy.
 * Not using alternative text ("alt") that conveys the meaning of an image appropriately.
 * Not having a text alternative for multimedia content -i.e captions and transcipts.
@@ -175,7 +158,6 @@ including by assistive technologies, without losing meaning.
 * Failing to mark up forms correctly.
 * Communicating information by colour alone which will not be percieved by colour blind users.
 * Not having a visual state that shows when a element has focus - i.e not styling :focus the same as :hover.
->>>>>>> Review of FECS document for spelling and readability. Minor edits to content.
 * Only communicating states and actions visually - e.g selected, open, close. This also needs to be in the content/markup layer.
 * Failing to allow a keyboard user to access all content and functionally on a page - usually by using incorrect HTML elements, e.g spans and divs instead of links or buttons or by introducing keyboard traps with javascript.
 * Failing to inform a screen reader user when content dynamically updates on a page.
