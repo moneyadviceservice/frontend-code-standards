@@ -5,7 +5,21 @@ This document contains guidelines for web pages and applications built by the Mo
 
 It is a living document that will be continually updated and improved.
 
-This document's primarily aims to achieve: 1) code consistency and establish 2) best practices. By maintaining consistency in coding style and convention, we can ease the burden of legacy code maintenance, and mitigate risk of breakage in the future. By adhering to best practices, we ensure optimized page loading, accessibility, performance and maintainable code.
+This document's primarily aims to achieve: 1) code consistency and establish 2) best practices. By maintaining consistency in coding style and convention, we can ease the burden of legacy code maintenance, and mitigate risk of breakage in the future. By adhering to best practices, we ensure optimised page loading, accessibility, performance and maintainable code.
+
+## Contents
+
+1. General Guidelines
+2. Progressive Enhancement
+3. HTML Markup
+4. CSS
+5. JavaScript
+6. Accessibility
+7. Performance
+8. Browser Testing and Support
+9. Search Engine Optimisation
+10. Code Reviews
+
 
 ## General Guidelines
 ### Core Concepts
@@ -13,6 +27,7 @@ This document's primarily aims to achieve: 1) code consistency and establish 2) 
 * Markup should be clear, concise, semantic and generally valid.
 * Javascript should progressively enhance the experience.
 
+## Progressive Enhancement
 Where possible follow the principles of [progressive enhancement](https://www.gov.uk/service-manual/making-software/progressive-enhancement.html). Start by making sure your content is in the correct/logical order. Then select the most appropriate HTML elements and wai-aria atributes.
 
 ### General Practices
@@ -26,7 +41,7 @@ We prefer readability over file-size savings when it comes to maintaining existi
 We will use server-side or build processes to automatically minify and gzip all static client-side files, such as CSS and JavaScript.
 
 
-## Markup
+## HTML Markup
 ### HTML5
 We use the HTML5 Doctype by default and employ HTML5 features when appropriate.
 
@@ -63,7 +78,7 @@ Start by making sure your content is in the correct/logical order in your html d
 * Use `label` fields to label each form field, the `for` attribute should associate itself with the `id` of the input field, so users can click the labels.
 * Do not use the size attribute on your input fields. The size attribute is relative to the font-size of the text inside the input. Instead use css width.
 * Tables are not be used for page layout.
-* Use microformats and/or Microdata where appropriate, specifically hCard and adr.
+* Use microformats and/or microdata where appropriate, specifically hCard and adr.
 * Make use of THEAD, TBODY, CAPTIONS and TH tags (and Scope attribute) when marking up tables.
 * Always use title-case for headers and titles. Do not use all caps or all lowercase titles in markup, instead apply the CSS property `text-transform:uppercase/lowercase`.
 * Utilise the new HTML5 elements such as `header`, `nav`, `section`, `article`, `aside`, `footer` - but ensure you are using a [html5shiv](https://code.google.com/p/html5shiv/) so they can be styled in IE6,7,8
@@ -87,8 +102,6 @@ Start by making sure your content is in the correct/logical order in your html d
 ### General Coding Principles
 * Do not use presentational class names such as 'green'.
 * Any style you apply to :hover also apply to :focus so that keyboard users get the same visual cues.
-* Utilise [Object Oriented CSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) (OOCSS) and [Scalable and Module Architecture for CSS](http://smacss.com/) (SMACSS)
-* Follow the "Inception Rule" and do not nest your SASS more than three levels deep.
 * Do not make your styles too specific - specifity wars are a maintanence nightmare!
 * Avoid using IDs (keeps specificity low and promotes reusability)
 * Instead of using content semantics for class names (e.g news) use intention and design patterns (e.g promo-box and carousel) to ensure reusability of the object.
@@ -99,7 +112,7 @@ Start by making sure your content is in the correct/logical order in your html d
 
  <!-- add something about using .no-js and .js-enhanced classes on the body element to enable contextual styling   -->
 
-### Sass Preprocessor
+### Sass
 The Money Advice Service operates a Ruby on Rails environment and as such we write all our CSS using the Sass preprocessor language.
 
 To avoid deviating to far from the normal CSS syntax we use .scss, rather than the .sass variant.
@@ -110,15 +123,15 @@ Ideally you should aim for two levels of nesting which gives enough flexibility 
 
 Nesting selectors more than three levels deep, while tempting, causes verbose and unwieldly CSS to be constructed on compile.
 
-### Naming Conventions (Classes & IDs)
+### B.E.M. Naming Convention
 
 We follow the BEM (block, element, modifier) naming convention for assigning clear, conscise and semantic classes to our HTML elements.
 
 An explanation of BEM can be found on [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) but in short following this pattern:
 
-.block{}
-.block__element{}
-.block--modifier{}
+    .block{}
+    .block__element{}
+    .block--modifier{}
 
 .block represents the higher level of an abstraction or component.
 .block__element represents a descendent of .block that helps form the .block object.
@@ -126,18 +139,28 @@ An explanation of BEM can be found on [CSS Wizardry](http://csswizardry.com/2013
 
 A practical example of this is:
 
-.site-search{} /* Block */
-.site-search__field{} /* Element */
-.site-search--full{} /* Modifier */
+    .site-search{} /* Block */
+    .site-search__field{} /* Element */
+    .site-search--full{} /* Modifier */
 
 As noted in the CSS Wizardry article HTML elements marked up with the BEM naming convention can appear "ugly" and verbose. However, where they excell is in their readbility and their contribution to maintainable code.
 
 However, please note that the BEM naming style does not need to be used for elements that have no relationship to parent elements or sit on their own. Remember that BEM is used to clarify code, not to be adhered to without question.
 
-### Web Typography
-content coming soon
+### Object Oriented CSS
 
-#### Resouces
+In order to create a scaleable, reusable, and maintainable codebase we have adopted object oriented CSS (OOCSS). OOCSS in its simplest terms reduces CSS to generic objects that can be extracted from one location and reused across a website or application without unnecessary repetition.
+
+"single responsibility principle" - everything should do one thing, one thing only, and one thing well. This allows for a greater combination of...
+
+Utilise [Object Oriented CSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) (OOCSS) and [Scalable and Module Architecture for CSS](http://smacss.com/) (SMACSS)
+
+### Web Typography
+The Money Advice Service utilised web fonts in two ways. First, our brand font "Museo Slab" is referenced using the @font-face declaration. Secondly, to avoid unnecessary HTTP requests we encode site-wide and application specific icons in a web font. This allows for scalability without using individual SVG files or image sprites.
+
+It is also compatible with IE8 which we are required to support.
+
+#### Resources
 * [In your @font-face](http://fronteers.nl/congres/2011/sessions/in-your-font-face-jake-archibald) by Jake Archibald
 
 ## JavaScript
@@ -153,6 +176,10 @@ Use [html5shiv](https://code.google.com/p/html5shiv/) to ensure html5 element wo
 ### General Coding Principles
 
 Touch the DOM as little as possible as it is VERY slow. Instead cache nodelists and insert HTML as few times as possible.
+
+## Progressive Enhancement
+
+
 
 ## Accessibility
 All web pages and interfaces must comply to [Web Content Accessibility Guidelines](http://www.w3.org/TR/WCAG/) (WCAG) 2.0 AA standard both to the letter and in spirit.
@@ -292,3 +319,4 @@ The following browser support standards and guidelines seek to address the trade
 ## Search Engine Optimisation
 An essential part of good web design and development is SEO. Well-structured code is the key to ensuring that a web page not only gets properly indexed by search engines, but made accessible to those with limited web capabilities as well.
 
+## Code Reviews
