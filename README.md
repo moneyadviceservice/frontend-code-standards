@@ -1,17 +1,19 @@
 # Front-end Code Standards &amp; Best Practice
 
 
-This document contains guidelines for web pages and applications built by the Money Advice Service development team. It is inspired/based on [http://isobar-idev.github.io/code-standards/](http://isobar-idev.github.io/code-standards/) but with amends, deletions and additions, especially around accessibility. It is a living document that will be continually updated and improved.
+This document contains guidelines for web pages and applications built by the Money Advice Service development team. It is based on [http://isobar-idev.github.io/code-standards/](http://isobar-idev.github.io/code-standards/) but with amendments, deletions and additions, especially concerning accessibility.
 
-This document's primary motivation is two- fold: 1) code consistency and 2) best practices. By maintaining consistency in coding styles and conventions, we can ease the burden of legacy code maintenance, and mitigate risk of breakage in the future. By adhering to best practices, we ensure optimized page loading, accessibility, performance and maintainable code.
+It is a living document that will be continually updated and improved.
+
+This document's primarily aims to achieve: 1) code consistency and establish 2) best practices. By maintaining consistency in coding style and convention, we can ease the burden of legacy code maintenance, and mitigate risk of breakage in the future. By adhering to best practices, we ensure optimized page loading, accessibility, performance and maintainable code.
 
 ## General Guidelines
-### Pillars of Front-end Development
-* Separation of presentation, content, and behavior.
-* Markup should be well-formed, semantically correct and generally valid.
+### Core Concepts
+* Separation of content, style and behaviour.
+* Markup should be clear, concise, semantic and generally valid.
 * Javascript should progressively enhance the experience.
 
-Where possible follow the principles of [progressive enhancement](https://www.gov.uk/service-manual/making-software/progressive-enhancement.html). Start by making sure your content is in the correct/logical order.  Then select the most appropriate html elements and wai-aria atributes to mark the content up and ensure that core functionality works using HTTP (i.e links and forms). Then add images and apply css styles taking care to not introduce accessibility barriers. Finally add javascript and ensure you allow full keyboard access and keep screen reader users informed of what is being communicated to sighted users (e.g state and dynamic content changes). Where progressive enhancement isn't possible or pramatic it is still important to use semantic markup and to ensure that javascript is made accessible.
+Where possible follow the principles of [progressive enhancement](https://www.gov.uk/service-manual/making-software/progressive-enhancement.html). Start by making sure your content is in the correct/logical order. Then select the most appropriate HTML elements and wai-aria atributes.
 
 ### General Practices
 
@@ -26,29 +28,29 @@ We will use server-side or build processes to automatically minify and gzip all 
 
 ## Markup
 ### HTML5
-We use the HTML5 Doctype and HTML5 features when appropriate.
+We use the HTML5 Doctype by default and employ HTML5 features when appropriate.
 
-We test our markup against the [W3C validator](http://validator.w3.org/), to ensure that the markup is well formed. Valid html helps to write more maintainable, accessible, robust sites as well as debugging code.
+We test our markup against the [W3C validator](http://validator.w3.org/), to ensure that the markup is well formed. 100% valid code is not essential, but validation helps identify possible issues when building maintainable, accessible, robust sites as well as debugging code.
 
 #### Quoting Attributes
-The HTML5 specification defines quotes around attributes as optional. For consistency with attributes that accept whitespace, all attributes should be quoted.
+The HTML5 specification defines quotes around attributes as optional. For consistency with attributes that accept whitespace, all attributes should be quoted using double quotation marks.
 
 	<p class="line note" data-attribute="106">This is my paragraph of special text.</p>
 
-#### Doctype
-We use the HTML5 doctype. 
-	
+### Doctype
+We use the HTML5 doctype by default.
+
 	<!DOCTYPE html>
 
-This means we can use WAI-ARIA and mirodata and validate our pages. This also triggers standards mode in your browser.
+This allows us to use WAI-ARIA roles, microdata and validate our pages. This also triggers standards mode in the browser.
 
 ### Character Encoding
-All markup should be delivered as UTF-8, as its the most friendly for internationalization.
-We specify it in the head of the document
+All markup should be delivered as UTF-8, as it's the most friendly for internationalisation. We specify it in the head of the document
 
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	
+
 ### General Markup Guidelines
+<<<<<<< HEAD
 The following are general guidelines for structuring your HTML markup. Authors are reminded to always use markup which represents the semantics of the content in the document being created.
 Start by making sure your content is in the correct/logical order in your html document.  Then select the most appropriate html elements and wai-aria attributes to mark the content up.
 
@@ -66,30 +68,40 @@ Start by making sure your content is in the correct/logical order in your html d
 * Always use title-case for headers and titles. Do not use all caps or all lowercase titles in markup, instead apply the CSS property `text-transform:uppercase/lowercase`.
 * Utilise the new HTML5 elements such as `header`, `nav`, `section`, `article`, `aside`, `footer` - but ensure you are using a [html5shiv](https://code.google.com/p/html5shiv/) so they can be styled in IE6,7,8
 * Keep the DOM as simple as possible
+=======
+* Use semantic markup.
+* Start by making sure your content is in the correct and most logical order in your document before surrounding it with HTML tags. Then select the most appropriate HTML elements and wai-aria attributes to mark up the content.
+* Specify the language of content via the lang attribute - e.g `'lang="en-GB"'` which ensures content is read out correctly by screenreaders.
+* Use a hierarchical heading structure to help screen reader users navigate a page.
+* For links use a link `<a>` - a link takes you to content on the same or another page.
+* For buttons use a `<button>` - a button performs an action such as opening a widget or playing a video/animation.
+
+>>>>>>> Review of FECS document for spelling and readability. Minor edits to content.
 
 ### WAI-ARIA
 
-* User WAI-ARIA landmark roles to help screen reader users understand and navigate a page
-* Use WAI-ARIA form attributes to help screen reader users to use forms - e.g `aria-required="true"`
+* Use WAI-ARIA landmark roles to help screen reader users understand and navigate a page.
+* Use WAI-ARIA form attributes to help screen reader users to use forms - e.g `aria-required="true"`.
 * Use live regions to inform screen reader users of dynamic text changes - e.g `<div aria-live="polite" aria-atomic="true">`
-* Follow the [WAI-ARIA 1.0 Authoring Practices](http://www.w3.org/TR/wai-aria-practices/) when implement javascript widgets such as sliders, tooltips and tab panels
+* Follow the [WAI-ARIA 1.0 Authoring Practices](http://www.w3.org/TR/wai-aria-practices/) when implement javascript widgets such as sliders, tooltips and tab panels.
 
 
 ## CSS
 ### General Coding Principles
-* Do not use presentational class names such as 'green'
-* Any style you apply to :hover also apply to :focus so that keyboard users get the same visual cues
-* Utilise learnings from [Object Oriented CSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) (OCSS) and [Scalable and Module Architecture for CSS](http://smacss.com/) (SMACSS)
-	* Do not make your styles too specific - specifity wars are a maintanence nightmare!
-	* Don't style IDs, style classes instead (keeps specificty low and promotes reusability)
-	* Instead of using content semantics for class names (e.g news) uses intention and design patterns semantics (e.g promo-box and carousel) to ensure reusability
-	* Style classes (.subheading) instead of elements (h2) to promote reusablity and reduce tying design to document structure (which is very brittle)
-	* *NOTE: these apply to large sites rather than small sites/features*
-	* @todo: finish this list and add link to video
-* Use Sass to make your CSS more maintainable
- 
+* Do not use presentational class names such as 'green'.
+* Any style you apply to :hover also apply to :focus so that keyboard users get the same visual cues.
+* Utilise [Object Oriented CSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) (OOCSS) and [Scalable and Module Architecture for CSS](http://smacss.com/) (SMACSS)
+* Follow the "Inception Rule" and do not nest your SASS more than three levels deep.
+* Do not make your styles too specific - specifity wars are a maintanence nightmare!
+* Avoid using IDs (keeps specificity low and promotes reusability)
+* Instead of using content semantics for class names (e.g news) use intention and design patterns (e.g promo-box and carousel) to ensure reusability of the object.
+* Style classes (.subheading) instead of elements (h2) to promote reusablity and reduce tying design to document structure (which is very brittle).
+* *NOTE: these apply to large sites rather than small sites/features*
+* @todo: finish this list and add link to video
+* Use Sass to make your CSS more maintainable.
+
  <!-- add something about using .no-js and .js-enhanced classes on the body element to enable contextual styling   -->
-	
+
 
 ### Web Typography
 content coming soon
@@ -103,13 +115,13 @@ Our library of choice is [jQuery](http://jquery.com/)
 
 We should be using the latest version of jQuery 1.x which is currently 1.10.2
 
-*Note: It looks like we are currently using a few (older) versions on the website.  We should improve this so they are all using the same CDN'd version, so user have a higher chance of it already being cached in there browser.*
+*Note: It looks like we are currently using a few (older) versions on the website. We should improve this so they are all using the same CDN'd version, so user have a higher chance of it already being cached in their browser.*
 
-Use [html5shiv](https://code.google.com/p/html5shiv/) to ensure html5 element work in older version of Internet Explore (pre IE 9)
+Use [html5shiv](https://code.google.com/p/html5shiv/) to ensure html5 element work in older version of Internet Explorer (pre IE 9)
 
 ### General Coding Principles
 
-* Touch the DOM as little as possible as it is VERY slow - instead cache nodelists and insert html as few times as possible
+Touch the DOM as little as possible as it is VERY slow. Instead cache nodelists and insert HTML as few times as possible.
 
 ## Accessibility
 All web pages and interfaces must comply to [Web Content Accessibility Guidelines](http://www.w3.org/TR/WCAG/) (WCAG) 2.0 AA standard both to the letter and in spirit.
@@ -139,6 +151,7 @@ including by assistive technologies, without losing meaning.
 
 ### Common accessibility blunders are:
 
+<<<<<<< HEAD
 * Content not being in the a logical order in the document - as developer has been concentrating on the visual layout
 * Not using alternative text that conveys the meaning of an image appropriately
 * Not having text alternative for multiplemedia content -i.e captions and transcipts
@@ -151,11 +164,23 @@ including by assistive technologies, without losing meaning.
 * Failing to mark up forms correctly
 * Communicating information by colour alone  which will not be percieved by colour bind users.
 * Not having a visual state that shows when a element has focus - i.e not styling :focus the same as :hover
+=======
+* Content not being in a logical order in the document - as a developer has been concentrating on the visual layout rather then the content heirarchy.
+* Not using alternative text ("alt") that conveys the meaning of an image appropriately.
+* Not having a text alternative for multimedia content -i.e captions and transcipts.
+* Using jargon and complicated language instead of simple and clear language.
+* Not using headings correctly. A page should have one single h1 representing the page title. Other headings should be hierachical and allow a screen reader user to get an overview of the content on a page.
+* Failing to use the most appropriate semantic elements to mark up content
+* Using too many lists and headings  which add aural clutter to screen reader users.
+* Failing to mark up forms correctly.
+* Communicating information by colour alone which will not be percieved by colour blind users.
+* Not having a visual state that shows when a element has focus - i.e not styling :focus the same as :hover.
+>>>>>>> Review of FECS document for spelling and readability. Minor edits to content.
 * Only communicating states and actions visually - e.g selected, open, close. This also needs to be in the content/markup layer.
-* Failing to allow a keyboard user to access all content and functionally on a page - usually by using incorrect html elements, e.g spans and divs instead of links or buttons or by introducing keyboard traps with javascript
-* Failing to inform a screen reader user when content dynamically updates on a page
+* Failing to allow a keyboard user to access all content and functionally on a page - usually by using incorrect HTML elements, e.g spans and divs instead of links or buttons or by introducing keyboard traps with javascript.
+* Failing to inform a screen reader user when content dynamically updates on a page.
 * Failing to set focus when dynamic content is loaded such as a modal box and not enabling a keyboard user to close such content.
- 
+
 *Note: We should be following GOV.UKs lead who have done extensive accessibility testing: [https://www.gov.uk/service-manual/user-centered-design/accessibility](https://www.gov.uk/service-manual/user-centered-design/accessibility)*
 
 ### Resources
@@ -209,9 +234,9 @@ Yahoo's Exceptional Performance team has identified a number of [best practices 
 
 ## Browser Testing and Support
 
-The MAS aims to provide the best experience for the widest range of customers, whilst also ensuring the efficient and value driven development of features and use of resources. We aim to provide the best experience for the largest number of our core and key customers.
- 
-The MAS accepts that the nature of the web medium is such that not all web pages can be produced uniformly and consistently across all browsers. The MAS also accepts that certain variations in the customer digital experience are inevitable and are acceptable with limits. 
+The Money Advice Service aims to provide the best experience for the widest range of customers, whilst also ensuring efficient and value driven development of features and use of resources. We aim to provide the best experience for the largest number of our core customers.
+
+The Money Advice Service accepts that the nature of the web as a medium is such that not all web pages can be rendered uniformly and consistently across all browsers. The Money Advice Service also accepts that certain variations in the customer's digital experience are inevitable and are acceptable to a certain extent.
 
 The following browser support standards and guidelines seek to address the trade-off between experience, reach and resources.
 
