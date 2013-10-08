@@ -262,6 +262,25 @@ A browser is capped on the number of HTTP requests it can make in parallel. Serv
 
 ### HTTP requests and DNS Lookups
 
+### DNS Prefetching
+
+### Resource Prefetching
+
+### CSS and Performance
+
+* Never serve your CSS from an asset subdomain as the DNS lookup will delay rendering.
+* Link to the stylesheet from the document head.
+* Concatenate it.
+* Gzip and minify it to further reduce the file size.
+* Cache it to avoid continuing HTTP requests.
+
+### Gzipping and Minifying
+
+Using Gzip and minifying CSS are two simple methods of increasing CSS performance. 
+
+Minifying them to remove any comments and whitespace, and gzipping them to compress them down further.
+
+.htaccess files
 
 
 ### Resources
