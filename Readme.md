@@ -128,35 +128,35 @@ Nesting selectors more than three levels deep, while tempting, causes verbose an
 
 ### B.E.M. Naming Convention
 
-We follow the BEM (block, element, modifier) naming convention for assigning clear, conscise and semantic classes to our HTML elements.
+We have started following the BEM (block, element, modifier) naming convention for assigning clear, conscise and semantic classes to our HTML elements.
 
-An explanation of BEM can be found on [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) but in short following this pattern:
+An explanation of BEM can be found on [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) - we ave opted for the [SUIT naming convention](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md):
 
-    .block{}
-    .block__element{}
-    .block--modifier{}
+    .Block{}
+    .Block-element{}
+    .Block--modifier{}
 
-.block represents the higher level of an abstraction or component.
-.block__element represents a descendent of .block that helps form the .block object.
-.block--modifier represents a different state or version of .block.
+.Block represents the higher level of an abstraction or component.
+.Block-element represents a descendent of .block that helps form the .block object.
+.Block--modifier represents a different state or version of .block.
 
 A practical example of this is:
 
-    .site-search{} /* Block */
-    .site-search__field{} /* Element */
-    .site-search--full{} /* Modifier */
+    .SiteSearch{} /* Block */
+    .SiteSearch-field{} /* Element */
+    .SiteSearch--full{} /* Modifier */
 
 As noted in the CSS Wizardry article HTML elements marked up with the BEM naming convention can appear "ugly" and verbose. However, where they excell is in their readbility and their contribution to maintainable code.
 
 However, please note that the BEM naming style does not need to be used for elements that have no relationship to parent elements or sit on their own. Remember that BEM is used to clarify code, not to be adhered to without question.
 
-### Object Oriented CSS
+<!-- ### Object Oriented CSS
 
 In order to create a scaleable, reusable, and maintainable codebase we have adopted object oriented CSS (OOCSS). OOCSS in its simplest terms reduces CSS to generic objects that can be extracted from one location and reused across a website or application without unnecessary repetition.
 
 "single responsibility principle" - everything should do one thing, one thing only, and one thing well. This allows for a greater combination of...
 
-Utilise [Object Oriented CSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) (OOCSS) and [Scalable and Module Architecture for CSS](http://smacss.com/) (SMACSS)
+Utilise [Object Oriented CSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) (OOCSS) and [Scalable and Module Architecture for CSS](http://smacss.com/) (SMACSS) -->
 
 ### Web Typography
 The Money Advice Service utilised web fonts in two ways. First, our brand font "Museo Slab" is referenced using the @font-face declaration. Secondly, to avoid unnecessary HTTP requests we encode site-wide and application specific icons in a web font. This allows for scalability without using individual SVG files or image sprites.
