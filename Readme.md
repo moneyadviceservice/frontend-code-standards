@@ -160,14 +160,14 @@ Avoid using @mixins to reuse static snippets of code as it can result in bloated
 
 The directory structure that we use for our Sass files is:
 
-  - base
-  - blocks
-  - global
+  /base
+  /blocks
+  /global
     _functions.css.scss
     _mixins.css.scss
     _placeholders.css.scss
     _variables.css.scss
-  - layout
+  /layout
 
 **global** directory contains all of the non printing styles - your tool chest - all of your functions, mixins, placeholders and variables.
 
@@ -177,14 +177,9 @@ The directory structure that we use for our Sass files is:
 
 **layout** directory contains styles that are used to lay blocks out on the page which includes grids and columns
 
-
 ### Web Typography
-The Money Advice Service utilised web fonts in two ways. First, our brand font "Museo Slab" is referenced using the @font-face declaration and is available in mas-assets. Secondly, to avoid unnecessary HTTP requests we encode site-wide and application specific icons in a web font. This allows for scalability without using individual SVG files or image sprites.
+The Money Advice Service utilises web fonts in two ways. First, our brand font "Museo Slab" is referenced using the @font-face declaration and is available in mas-assets. Secondly, to avoid unnecessary HTTP requests we encode site-wide and application specific icons in a web font. This allows for scalability without using individual SVG files or image sprites.
 
-It is also compatible with IE8 which we are required to support.
-
-#### Resources
-* [In your @font-face](http://fronteers.nl/congres/2011/sessions/in-your-font-face-jake-archibald) by Jake Archibald
 
 ## JavaScript
 ### JavaScript Libraries
