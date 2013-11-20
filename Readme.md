@@ -5,7 +5,11 @@ This document contains guidelines for web pages and applications built by the Mo
 
 It is a living document that will be continually updated and improved.
 
-This document's primarily aims to achieve: 1) code consistency and establish 2) best practices. By maintaining consistency in coding style and convention, we can ease the burden of legacy code maintenance, and mitigate risk of breakage in the future. By adhering to best practices, we ensure optimised page loading, accessibility, performance and maintainable code.
+This document's primarily aims to achieve: 
+1) code consistency and establish 
+2) best practices. 
+
+By maintaining consistency in coding style and convention, we can ease the burden of legacy code maintenance, and mitigate risk of breakage in the future. By adhering to best practices, we ensure optimised page loading, accessibility, performance and maintainable code.
 
 ## Contents
 
@@ -27,7 +31,7 @@ This document's primarily aims to achieve: 1) code consistency and establish 2) 
 * Javascript should progressively enhance the experience.
 
 ## Progressive Enhancement
-Where possible follow the principles of [progressive enhancement](https://www.gov.uk/service-manual/making-software/progressive-enhancement.html). Start by making sure your content is in the correct/logical order. Then select the most appropriate HTML elements and wai-aria atributes.
+Where possible follow the principles of [progressive enhancement](https://www.gov.uk/service-manual/making-software/progressive-enhancement.html). Start by making sure your content is in the correct/logical order. Then select the most appropriate HTML elements and wai-aria atributes. Enhanced layout is then provided by externally linked CSS. Enhanced behaviour is provided by unobtrusive, externally linked JavaScript.
 
 ## General Practices
 
@@ -37,11 +41,11 @@ The Money Advice Service indents all code by 2 spaces. There is no technical rea
 #### Readability vs Compression
 We prefer readability over file-size savings when it comes to maintaining existing files. Plenty of whitespace is encouraged where appropriate. There is no need for any developer to purposefully compress HTML or CSS, nor obfuscate JavaScript.
 
-We will use server-side or build processes to automatically minify and gzip all static client-side files, such as CSS and JavaScript.
+All static client-side files, such as CSS and JavaScript, are automatically minified as part of the Ruby on Rails asset pipeline.
 
 ### Resetting through normalise.scss
 
-Not all projects require the same level of browser reset. However, we have settled on an amended version of the Normalise.scss reset by [Nicolas Gallagher](http://necolas.github.io/normalize.css/).
+Not all projects require the same level of browser reset. However, we have settled on an amended version of the Normalise.scss reset by [Nicolas Gallagher](http://necolas.github.io/normalize.css/) which is automatically included as part of mas-assets (our gem containing shared client side assets).
 
 
 ## HTML Markup
@@ -85,17 +89,19 @@ Start by making sure your content is in the correct/logical order in your html d
 * Make use of THEAD, TBODY, CAPTIONS and TH tags (and Scope attribute) when marking up tables.
 * Always use title-case for headers and titles. Do not use all caps or all lowercase titles in markup, instead apply the CSS property `text-transform:uppercase/lowercase`.
 * Utilise the new HTML5 elements such as `header`, `nav`, `section`, `article`, `aside`, `footer` - but ensure you are using a [html5shiv](https://code.google.com/p/html5shiv/) so they can be styled in IE6,7,8
-* Keep the DOM as simple as possible
-* Use semantic markup.
-* Start by making sure your content is in the correct and most logical order in your document before surrounding it with HTML tags. Then select the most appropriate HTML elements and wai-aria attributes to mark up the content.
-* Specify the language of content via the lang attribute - e.g `'lang="en-GB"'` which ensures content is read out correctly by screenreaders.
-* Use a hierarchical heading structure to help screen reader users navigate a page.
-* For links use a link `<a>` - a link takes you to content on the same or another page.
-* For buttons use a `<button>` - a button performs an action such as opening a widget or playing a video/animation.
+* Keep the DOM as simple as possible - although extra markup can be used to make code more scalable, reusable and maintainable.
+
 
 ### WAI-ARIA
 
-* Use WAI-ARIA landmark roles to help screen reader users understand and navigate a page.
+* Use [WAI-ARIA landmark roles](http://blog.paciellogroup.com/2013/02/using-wai-aria-landmarks-2013/) to help screen reader users understand and navigate a page i.e
+** role="banner"
+** role="complementary" 
+** role="contentinfo"
+** role="form"
+** role="main" 
+** role="navigation"
+** role="search" 
 * Use WAI-ARIA form attributes to help screen reader users to use forms - e.g `aria-required="true"`.
 * Use live regions to inform screen reader users of dynamic text changes - e.g `<div aria-live="polite" aria-atomic="true">`
 * Follow the [WAI-ARIA 1.0 Authoring Practices](http://www.w3.org/TR/wai-aria-practices/) when implement javascript widgets such as sliders, tooltips and tab panels.
@@ -108,26 +114,11 @@ Start by making sure your content is in the correct/logical order in your html d
 * Do not make your styles too specific - specifity wars are a maintanence nightmare!
 * Avoid using IDs (keeps specificity low and promotes reusability)
 * Instead of using content semantics for class names (e.g news) use intention and design patterns (e.g promo-box and carousel) to ensure reusability of the object.
-* Style classes (.subheading) instead of elements (h2) to promote reusablity and reduce tying design to document structure (which is very brittle).
-* *NOTE: these apply to large sites rather than small sites/features*
-* @todo: finish this list and add link to video
-* Use Sass to make your CSS more maintainable.
-
+* Consider styling classes (.subheading) instead of elements (h2) to promote reusablity and reduce tying design to document structure (which is very brittle). If directly styling elements inside components use child selectors where possible to reduce the depth of applicability - this is ensures that styles do not affect other unintended elements.
+* Use Sass to make your CSS more maintainable (see below).
  <!-- add something about using .no-js and .js-enhanced classes on the body element to enable contextual styling   -->
 
-### Sass
-The Money Advice Service operates a Ruby on Rails environment and as such we write all our CSS using the Sass preprocessor language.
-
-To avoid deviating to far from the normal CSS syntax we use .scss, rather than the .sass variant.
-
-We follow the Sass communities "[Inception Rule](http://thesassway.com/beginner/the-inception-rule)" that advises that you should not nest your SCSS more than four levels deep.
-
-Ideally you should aim for two levels of nesting which gives enough flexibility for selectors and their accompanying pseudo-states (i.e :hover).
-
-Nesting selectors more than three levels deep, while tempting, causes verbose and unwieldly CSS to be constructed on compile.
-
 ### B.E.M. Naming Convention
-
 We have started following the BEM (block, element, modifier) naming convention for assigning clear, conscise and semantic classes to our HTML elements.
 
 An explanation of BEM can be found on [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) - we ave opted for the [SUIT naming convention](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md):
@@ -150,16 +141,39 @@ As noted in the CSS Wizardry article HTML elements marked up with the BEM naming
 
 However, please note that the BEM naming style does not need to be used for elements that have no relationship to parent elements or sit on their own. Remember that BEM is used to clarify code, not to be adhered to without question.
 
-<!-- ### Object Oriented CSS
 
-In order to create a scaleable, reusable, and maintainable codebase we have adopted object oriented CSS (OOCSS). OOCSS in its simplest terms reduces CSS to generic objects that can be extracted from one location and reused across a website or application without unnecessary repetition.
+### Sass
+The Money Advice Service operates a Ruby on Rails environment and as such we write all our CSS using the Sass preprocessor language.
 
-"single responsibility principle" - everything should do one thing, one thing only, and one thing well. This allows for a greater combination of...
+To avoid deviating to far from the normal CSS syntax we use .scss, rather than the .sass variant.
 
-Utilise [Object Oriented CSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) (OOCSS) and [Scalable and Module Architecture for CSS](http://smacss.com/) (SMACSS) -->
+We follow the Sass communities "[Inception Rule](http://thesassway.com/beginner/the-inception-rule)" that advises that you should not nest your SCSS more than four levels deep.
+
+Ideally you should aim for no more than two levels of nesting which gives enough flexibility for selectors and their accompanying pseudo-states (i.e :hover).
+
+Nesting selectors more than three levels deep, while tempting, causes verbose and unwieldly CSS to be constructed on compile.
+
+Avoid using @mixins to reuse static snippets of code as it can result in bloated css. Instead use placeholder selectors in @extends (see: [Mastering Sass extends and placelholders](http://8gramgorilla.com/mastering-sass-extends-and-placeholders/)). Mixins should just be used when code changes due to a variable being passed in.
+
+The directory structure that we use for our Sass files is:
+
+  - base
+  - blocks
+  - global
+    _functions.css.scss
+    _mixins.css.scss
+    _placeholders.css.scss
+    _variables.css.scss
+  - layout
+
+*global* directory contains all of the non printing styles - your tool chest - all of your functions, mixins, placeholders and variables.
+*base* directory contains all of the visual styles that are not layout or are specfic to a component/module/block - this includes font-face and default element styles
+*blocks* directory a file for each component/module/block. The name of the file is the same as the name of the block
+*layout* directory contains styles that are used to lay blocks out on the page which includes grids and columns
+
 
 ### Web Typography
-The Money Advice Service utilised web fonts in two ways. First, our brand font "Museo Slab" is referenced using the @font-face declaration. Secondly, to avoid unnecessary HTTP requests we encode site-wide and application specific icons in a web font. This allows for scalability without using individual SVG files or image sprites.
+The Money Advice Service utilised web fonts in two ways. First, our brand font "Museo Slab" is referenced using the @font-face declaration and is available in mas-assets. Secondly, to avoid unnecessary HTTP requests we encode site-wide and application specific icons in a web font. This allows for scalability without using individual SVG files or image sprites.
 
 It is also compatible with IE8 which we are required to support.
 
@@ -168,13 +182,10 @@ It is also compatible with IE8 which we are required to support.
 
 ## JavaScript
 ### JavaScript Libraries
-Our library of choice is [jQuery](http://jquery.com/)
+Our library of choice is [jQuery](http://jquery.com/). We currently use jQuery 1.8.1 which is provided by Ruby on Rails.
 
-We should be using the latest version of jQuery 1.x which is currently 1.10.2
+Use [html5shiv](https://code.google.com/p/html5shiv/) to ensure html5 element work in older version of Internet Explorer (pre IE 9) which is also provided as part of mas-assets
 
-*Note: It looks like we are currently using a few (older) versions on the website. We should improve this so they are all using the same CDN'd version, so user have a higher chance of it already being cached in their browser.*
-
-Use [html5shiv](https://code.google.com/p/html5shiv/) to ensure html5 element work in older version of Internet Explorer (pre IE 9)
 
 ### General Coding Principles
 
@@ -246,7 +257,7 @@ First, the browser assumes that any script being called may alter the page subst
 
 Secondly, scripts are downloaded asynchronously in order that a library like jQuery arrives before the script that relies on it (your plugin).
 
-In a nutshell - to render a page as fast as the browser will allow link to your styles in the head and to prevent JavaScript from stalling the rendering process, call scripts from the bottom.
+In a nutshell - to render a page as fast as the browser will allow link to your styles in the head and to prevent JavaScript from stalling the rendering process, call scripts from the bottom. An excpetion is when creating contextual classes that are used for layout such as .js - these need to be in the head to prevent a flash of unstyled content.
 
 ### HTTP Requests
 
@@ -256,69 +267,6 @@ Every asset on a page requires a HTTP request to call it to be downloaded and re
 
 Additionally, browsers can only download a set number of assets "in parallel" which can introduce a bottleneck when downloading, for example, large images.
 
-### CDN
-
-A browser is capped on the number of HTTP requests it can make in parallel. Serving assets from multiple domains (especially if they are CDN designed to decrease latency by being physically located near to our web server) can increase the number of assets a browser can download in parallel.
-
-### HTTP requests and DNS Lookups
-
-### DNS Prefetching
-
-### Resource Prefetching
-
-### CSS and Performance
-
-* Never serve your CSS from an asset subdomain as the DNS lookup will delay rendering.
-* Link to the stylesheet from the document head.
-* Concatenate it.
-* Gzip and minify it to further reduce the file size.
-* Cache it to avoid continuing HTTP requests.
-
-### Gzipping and Minifying
-
-Using Gzip and minifying CSS are two simple methods of increasing CSS performance. 
-
-Minifying them to remove any comments and whitespace, and gzipping them to compress them down further.
-
-.htaccess files
-
-
-### Resources
-
-Yahoo's Exceptional Performance team has identified a number of [best practices for making web pages fast](http://developer.yahoo.com/performance/rules.html). The list includes 35 best practices divided into 7 categories. 23 of these can be checked using the [YSlow](http://yslow.org/) tool:
-
-<ol>
-<li><a href="http://developer.yahoo.com/performance/rules.html#num_http">Minimize HTTP Requests</a> - use css sprites, data uris and concatenate CSS and JS files</li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#cdn">Use a Content Delivery Network</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#emptysrc">Avoid empty src or href</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#expires">Add an Expires or a Cache-Control Header</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#gzip">Gzip Components</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#css_top">Put StyleSheets at the Top</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#js_bottom">Put Scripts at the Bottom</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#css_expressions">Avoid CSS Expressions</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#external">Make JavaScript and CSS External</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#dns_lookups">Reduce DNS Lookups</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#minify">Minify JavaScript and CSS</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#redirects">Avoid Redirects</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#js_dupes">Remove Duplicate Scripts</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#etags">Configure ETags</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#cacheajax">Make AJAX Cacheable</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#ajax_get">Use GET for AJAX Requests</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#min_dom">Reduce the Number of DOM Elements</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#no404">No 404s</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#cookie_size">Reduce Cookie Size</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#cookie_free">Use Cookie-Free Domains for Components</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#no_filters">Avoid Filters</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#no_scale">Do Not Scale Images in HTML</a> - <i>note: dated due to responsive</i></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html#favicon">Make favicon.ico Small and Cacheable</a></li>
-</ol>
-
-### jQuery Proven Performance Tips And Tricks
-
-[Slides by Addy Osmani](http://addyosmani.com/jqprovenperformance/)
-
-@todo: summarise slides
-
 
 ### Tools to help you measure and improve performance are:
 * [YSlow](http://yslow.org/)
@@ -326,49 +274,41 @@ Yahoo's Exceptional Performance team has identified a number of [best practices 
 * [boomerang](http://yahoo.github.io/boomerang/doc/) - End user oriented web performance testing and beaconing
 * In browser waterfall UI - found in Chrome (best), also Safari, Firebug, IE and Opera
 * [Performance Tools](http://www.stevesouders.com/blog/2012/10/09/webperfdays-performance-tools/) - stevesouders.com
+* [Google PageSpeed Insights](http://developers.google.com/speed/pagespeed/insights/)
 
-## Browser Testing and Support
+## Browser Support
 
-The Money Advice Service aims to provide the best experience for the widest range of customers, whilst also ensuring efficient and value driven development of features and use of resources. We aim to provide the best experience for the largest number of our core customers.
-
-The Money Advice Service accepts that the nature of the web as a medium is such that not all web pages can be rendered uniformly and consistently across all browsers. The Money Advice Service also accepts that certain variations in the customer's digital experience are inevitable and are acceptable to a certain extent.
-
-The following browser support standards and guidelines seek to address the trade-off between experience, reach and resources.
+We accept that the nature of the web is such that not all web pages can be produced uniformly and consistently across all browsers. The following browser support guidelines seek to address the trade-off between experience, reach and resources.
 
 ### Primary Browsers - supported
-
-* All content must be readable and all functionality must work.
-* Where variations inevitably occur between browsers:
-	* All content must remain readable.
-	* Decisions of trade off through development are prioritised to give those that maximise and benefit the majority of customers according to our browser statistics.
-* Pages should be produced to maximise the user experience for the browsers used by the largest number of our core and key customers.
+All content must be readable and all functionality must work.
 
 | Browser name | Version | Platform  |
 | ------ | ------ | -----: |
-|  Internet Explorer  |  8, 9  |   Windows  |
-|  Firefox  |  17+  |   Mac/Windows  |
-|  Chrome  |  23+  |   Mac/Windows  |
+|  Internet Explorer  |  8,9,10 |   Windows  |
+|  Firefox  |  Latest version  |   Mac/Windows  |
+|  Chrome  |  Latest version |   Mac/Windows  |
 |  Safari  |  5.1+  |   Mac  |
 
-
 ### Secondary Browsers - partially supported
-
-* All main content must be readable and navigation must function.
-* Any degradation to the user experience must not affect the ability of the user to read content.
-* Any degradation to functionality must follow the principal of graceful degradation
+All content must be readable must be readable and core functionality must work.
 
 | Browser name | Version | Platform  |
 | ------ | ------ | -----: |
-|  Internet Explorer  |  10  |   Windows  |
-|  Opera  |  9.6x, 10  |   Mac/Windows  |
+|  Internet Explorer  |  7  |   Windows  |
+|  Opera  |  10+  |   Mac/Windows  |
 
 
-*Note: This needs updating as I believe our content should be usable in older browsers too (even if it doesn't look pretty!) - we should be using Progressive Enhancement rather than gracefull degradation. This will be especially true when we start building a responsive site. IE10 should also be a primary browser. We need to start thinking about mobile browser/device support.*
+### Mobile browsers - supported as secondary browsers
+Follow secondary browser standards of performance and user experience.
 
-*We should be following the same approach as GOV.UK, see: [https://www.gov.uk/service-manual/user-centered-design/browsers-and-devices](https://www.gov.uk/service-manual/user-centered-design/browsers-and-devices)*
+| Browser name | Version | Platform  |
+| ------ | ------ | -----: |
+|  Safari for iOS  |  6+  |   iOS iPad, iPhone  |
+|  Chrome for iOS  |  Latest version  |   iOS iPad, iPhone  |
+|  Android Webkit  |  2.x and 4.x  |   Android  |
 
+*Latest version* - Where latest version is listed, it means the latest major stable version plus one major version back, as these browsers regularly self-update.
 
 ## Search Engine Optimisation
 An essential part of good web design and development is SEO. Well-structured code is the key to ensuring that a web page not only gets properly indexed by search engines, but made accessible to those with limited web capabilities as well.
-
-## Code Reviews
