@@ -160,14 +160,14 @@ Avoid using @mixins to reuse static snippets of code as it can result in bloated
 
 The directory structure that we use for our Sass files is:
 
-  /base
-  /blocks
-  /global
-    _functions.css.scss
-    _mixins.css.scss
-    _placeholders.css.scss
-    _variables.css.scss
-  /layout
+	/base
+	/blocks
+	/global
+	  _functions.css.scss
+	  _mixins.css.scss
+	  _placeholders.css.scss
+	  _variables.css.scss
+	/layout
 
 **global** directory contains all of the non printing styles - your tool chest - all of your functions, mixins, placeholders and variables.
 
@@ -234,8 +234,6 @@ including by assistive technologies, without losing meaning.
 * Failing to allow a keyboard user to access all content and functionally on a page - usually by using incorrect HTML elements, e.g spans and divs instead of links or buttons or by introducing keyboard traps with javascript.
 * Failing to inform a screen reader user when content dynamically updates on a page.
 * Failing to set focus when dynamic content is loaded such as a modal box and not enabling a keyboard user to close such content.
-
-*Note: We should be following GOV.UKs lead who have done extensive accessibility testing: [https://www.gov.uk/service-manual/user-centered-design/accessibility](https://www.gov.uk/service-manual/user-centered-design/accessibility)*
 
 ### Resources
 * [WebAim](http://webaim.org/) - Information, training, resources, guidelines and standards for Web accessibility and disability access to the Web.
@@ -309,7 +307,4 @@ Follow secondary browser standards of performance and user experience.
 |  Chrome for iOS  |  Latest version  |   iOS iPad, iPhone  |
 |  Android Webkit  |  2.x and 4.x  |   Android  |
 
-*Latest version* - Where latest version is listed, it means the latest major stable version plus one major version back, as these browsers regularly self-update.
-
-## Search Engine Optimisation
-An essential part of good web design and development is SEO. Well-structured code is the key to ensuring that a web page not only gets properly indexed by search engines, but made accessible to those with limited web capabilities as well.
+**Latest version** - Where latest version is listed, it means the latest major stable version plus one major version back, as these browsers regularly self-update.
