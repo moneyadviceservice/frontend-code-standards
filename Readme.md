@@ -25,15 +25,14 @@ By maintaining consistency in coding style and convention, we can ease the burde
 10. Code Reviews
 
 
-## Core Concepts
+## General Guidelines
+
+### Core Concepts
 * Separation of content, style and behaviour.
 * Markup should be clear, concise, semantic and generally valid.
 * Javascript should progressively enhance the experience.
 
-## Progressive Enhancement
-Where possible follow the principles of [progressive enhancement](https://www.gov.uk/service-manual/making-software/progressive-enhancement.html). Start by making sure your content is in the correct/logical order. Then select the most appropriate HTML elements and wai-aria atributes. Enhanced layout is then provided by externally linked CSS. Enhanced behaviour is provided by unobtrusive, externally linked JavaScript.
-
-## General Practices
+### General Practices
 
 #### Indentation
 The Money Advice Service indents all code by 2 spaces. There is no technical reason behind this practice, it simply minimises horizontal whitespace and sets up a standard for the development team to adhere to.
@@ -43,10 +42,8 @@ We prefer readability over file-size savings when it comes to maintaining existi
 
 All static client-side files, such as CSS and JavaScript, are automatically minified as part of the Ruby on Rails asset pipeline.
 
-### Resetting through normalise.scss
-
-Not all projects require the same level of browser reset. However, we have settled on an amended version of the Normalise.scss reset by [Nicolas Gallagher](http://necolas.github.io/normalize.css/) which is automatically included as part of mas-assets (our gem containing shared client side assets).
-
+## Progressive Enhancement
+Follow the principles of [progressive enhancement](https://www.gov.uk/service-manual/making-software/progressive-enhancement.html). Start by making sure your content is in the correct/logical order. Then select the most appropriate HTML elements and wai-aria atributes. Enhanced layout is then provided by externally linked CSS. Enhanced behaviour is provided by unobtrusive, externally linked JavaScript.
 
 ## HTML Markup
 ### HTML5
@@ -109,12 +106,16 @@ Start by making sure your content is in the correct/logical order in your html d
 
 ## CSS
 ### General Coding Principles
+* Add CSS through external files, minimizing the # of files, if possible. It should always be in the HEAD of the document.
+* Use the LINK tag to include, never the @import.
+* Don't include styles inline in the document, either in a style tag or on the elements. It's harder to track down style rules.
+* Use [normalize.css](http://necolas.github.io/normalize.css/) to make rendering more consistent across browsers. This is automatically included as part of mas-assets (our gem containing shared client side assets).
 * Do not use presentational class names such as 'green'.
 * Any style you apply to :hover also apply to :focus so that keyboard users get the same visual cues.
 * Do not make your styles too specific - specifity wars are a maintanence nightmare!
 * Avoid using IDs (keeps specificity low and promotes reusability)
 * Instead of using content semantics for class names (e.g news) use intention and design patterns (e.g promo-box and carousel) to ensure reusability of the object.
-* Consider styling classes (.subheading) instead of elements (h2) to promote reusablity and reduce tying design to document structure (which is very brittle). If directly styling elements inside components use child selectors where possible to reduce the depth of applicability - this is ensures that styles do not affect other unintended elements.
+* Consider styling classes (.heading-secondary) instead of elements (h2) to promote reusablity and reduce tying design to document structure (which is very brittle). If directly styling elements inside components use child selectors where possible to reduce the depth of applicability - this is ensures that styles do not affect other unintended elements.
 * Use Sass to make your CSS more maintainable (see below).
  <!-- add something about using .no-js and .js-enhanced classes on the body element to enable contextual styling   -->
 
@@ -128,7 +129,9 @@ An explanation of BEM can be found on [CSS Wizardry](http://csswizardry.com/2013
     .Block--modifier{}
 
 .Block represents the higher level of an abstraction or component.
+
 .Block-element represents a descendent of .block that helps form the .block object.
+
 .Block--modifier represents a different state or version of .block.
 
 A practical example of this is:
