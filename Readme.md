@@ -14,15 +14,13 @@ By maintaining consistency in coding style and convention, we can ease the burde
 ## Contents
 
 1. [General Guidelines](#general-guidelines)
-2. Progressive Enhancement
-3. HTML Markup
-4. CSS
-5. JavaScript
-6. Accessibility
-7. Performance
-8. Browser Testing and Support
-9. Search Engine Optimisation
-10. Code Reviews
+2. [Progressive Enhancement](#progressive-enhancement)
+3. [HTML Markup](#html-markup)
+4. [CSS](#css)
+5. [JavaScript](#javascript)
+6. [Accessibility](#accessibility)
+7. [Performance](#performance)
+8. [Browser Support](#browser-support)
 
 
 ## General Guidelines
