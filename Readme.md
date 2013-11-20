@@ -95,13 +95,13 @@ Start by making sure your content is in the correct/logical order in your html d
 ### WAI-ARIA
 
 * Use [WAI-ARIA landmark roles](http://blog.paciellogroup.com/2013/02/using-wai-aria-landmarks-2013/) to help screen reader users understand and navigate a page i.e
-  * role="banner"
-  * role="complementary" 
-  * role="contentinfo"
-  * role="form"
-  * role="main" 
-  * role="navigation"
-  * role="search" 
+  * `role="banner"`
+  * `role="complementary" `
+  * `role="contentinfo"`
+  * `role="form"`
+  * `role="main"`
+  * `role="navigation"`
+  * `role="search"`
 * Use WAI-ARIA form attributes to help screen reader users to use forms - e.g `aria-required="true"`.
 * Use live regions to inform screen reader users of dynamic text changes - e.g `<div aria-live="polite" aria-atomic="true">`
 * Follow the [WAI-ARIA 1.0 Authoring Practices](http://www.w3.org/TR/wai-aria-practices/) when implement javascript widgets such as sliders, tooltips and tab panels.
