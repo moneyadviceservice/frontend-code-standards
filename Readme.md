@@ -120,7 +120,7 @@ Start by making sure your content is in the correct/logical order in your html d
 ### B.E.M. Naming Convention
 We have started following the BEM (block, element, modifier) naming convention for assigning clear, conscise and semantic classes to our HTML elements.
 
-An explanation of BEM can be found on [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) - we ave opted for the [SUIT naming convention](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md):
+An explanation of BEM can be found on [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/):
 
     .block{}
     .block__element{}
@@ -141,6 +141,8 @@ A practical example of this is:
 As noted in the CSS Wizardry article HTML elements marked up with the BEM naming convention can appear "ugly" and verbose. However, where they excell is in their readbility and their contribution to maintainable code.
 
 However, please note that the BEM naming style does not need to be used for elements that have no relationship to parent elements or sit on their own. Remember that BEM is used to clarify code, not to be adhered to without question.
+
+Please read [Philip Walton's excellent article on CSS Architecture](http://philipwalton.com/articles/css-architecture/) for more details on why to use such an approach.
 
 
 ### Sass
