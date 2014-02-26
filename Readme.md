@@ -161,19 +161,19 @@ Avoid using @mixins to reuse static snippets of code as it can result in bloated
 The directory structure that we use for our Sass files is:
 
 	/base
-	/blocks
-	/global
+	/components
+	/lib
 	  _functions.css.scss
 	  _mixins.css.scss
 	  _placeholders.css.scss
 	  _variables.css.scss
 	/layout
 
-**global** directory contains all of the non printing styles - your tool chest - all of your functions, mixins, placeholders and variables.
+**lib** directory contains all of the non printing styles - your tool chest - all of your functions, mixins, placeholders and variables.
 
 **base** directory contains all of the visual styles that are not layout or are specfic to a component/module/block - this includes font-face and default element styles
 
-**blocks** directory a file for each component/module/block. The name of the file is the same as the name of the block
+**components** directory a file for each component/module/block. The name of the file is the same as the name of the block
 
 **layout** directory contains styles that are used to lay blocks out on the page which includes grids and columns
 
