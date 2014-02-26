@@ -122,21 +122,21 @@ We have started following the BEM (block, element, modifier) naming convention f
 
 An explanation of BEM can be found on [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) - we ave opted for the [SUIT naming convention](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md):
 
-    .Block{}
-    .Block-element{}
-    .Block--modifier{}
+    .block{}
+    .block__element{}
+    .block--modifier{}
 
-.Block represents the higher level of an abstraction or component.
+.block represents the higher level of an abstraction or component.
 
-.Block-element represents a descendent of .block that helps form the .block object.
+.block__element represents a descendent of .block that helps form the .block object.
 
-.Block--modifier represents a different state or version of .block.
+.block--modifier represents a different state or version of .block.
 
 A practical example of this is:
 
-    .SiteSearch{} /* Block */
-    .SiteSearch-field{} /* Element */
-    .SiteSearch--full{} /* Modifier */
+    .site-search{} /* Block */
+    .site-search__submit{} /* Element */
+    .site-search--full{} /* Modifier */
 
 As noted in the CSS Wizardry article HTML elements marked up with the BEM naming convention can appear "ugly" and verbose. However, where they excell is in their readbility and their contribution to maintainable code.
 
