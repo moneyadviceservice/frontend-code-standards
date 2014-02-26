@@ -190,6 +190,9 @@ Use [html5shiv](https://code.google.com/p/html5shiv/) to ensure html5 element wo
 
 Touch the DOM as little as possible as it is VERY slow. Instead cache nodelists and insert HTML as few times as possible.
 
+We have recently decided to follow the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+
+
 ## Accessibility
 All web pages and interfaces must comply to [Web Content Accessibility Guidelines](http://www.w3.org/TR/WCAG/) (WCAG) 2.0 AA standard both to the letter and in spirit.
 
