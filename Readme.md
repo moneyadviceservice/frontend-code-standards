@@ -198,6 +198,8 @@ We have recently decided to follow the [Airbnb JavaScript Style Guide](https://g
 ## Accessibility
 All web pages and interfaces must comply to [Web Content Accessibility Guidelines](http://www.w3.org/TR/WCAG/) (WCAG) 2.0 AA standard both to the letter and in spirit.
 
+We are working with the [Digital Accessibility Centre](http://www.digitalaccessibilitycentre.org/) to ensure new features conform to WCAG 2.0 AA.  They can provide feedback on wireframes and designs, offer advice on implementation and audit and accessibility user test new features. We can provide details on how to engage with them on request.
+
 ### The four characteristics of accessible web content are:
 
 #### Perceivable
