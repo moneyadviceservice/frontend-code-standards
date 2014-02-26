@@ -182,6 +182,10 @@ The Money Advice Service utilises web fonts in two ways. First, our brand font "
 
 
 ## JavaScript
+
+### CoffeeScript
+We do not use CoffeeScript for any development work nor encourage any 3rd party company working on our tools to use it. Instead a well structured JavaScript code with proper object oriented structure gives us similar flexibility and has a lower learning curve than CS has.
+
 ### JavaScript Libraries
 Our library of choice is [jQuery](http://jquery.com/). We currently use jQuery 1.8.1 which is provided by Ruby on Rails.
 
@@ -190,9 +194,11 @@ Use [html5shiv](https://code.google.com/p/html5shiv/) to ensure html5 element wo
 
 ### General Coding Principles
 
-Touch the DOM as little as possible as it is VERY slow. Instead cache nodelists and insert HTML as few times as possible.
+Touch the DOM as little as possible as it is VERY slow. Instead cache nodelists and insert HTML as few times as possible. 
 
 We have recently decided to follow the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+
+### 
 
 
 ## Accessibility
