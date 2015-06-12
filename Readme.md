@@ -301,7 +301,7 @@ All content must be readable and all functionality must work.
 |  Safari  |  5.1+  |   Mac  |
 
 ### Secondary Browsers - partially supported
-All content must be readable must be readable and core functionality must work.
+All content must be readable and core functionality must work.
 
 | Browser name | Version | Platform  |
 | ------ | ------ | -----: |
