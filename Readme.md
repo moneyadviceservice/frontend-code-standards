@@ -295,7 +295,7 @@ All content must be readable and all functionality must work.
 
 | Browser name | Version | Platform  |
 | ------ | ------ | -----: |
-|  Internet Explorer  |  8,9,10 |   Windows  |
+|  Internet Explorer  |  9,10,11 |   Windows  |
 |  Firefox  |  Latest version  |   Mac/Windows  |
 |  Chrome  |  Latest version |   Mac/Windows  |
 |  Safari  |  5.1+  |   Mac  |
@@ -305,7 +305,7 @@ All content must be readable and core functionality must work.
 
 | Browser name | Version | Platform  |
 | ------ | ------ | -----: |
-|  Internet Explorer  |  7  |   Windows  |
+|  Internet Explorer  |  7,8  |   Windows  |
 |  Opera  |  10+  |   Mac/Windows  |
 
 
