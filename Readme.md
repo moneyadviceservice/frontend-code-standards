@@ -318,4 +318,8 @@ Follow secondary browser standards of performance and user experience.
 |  Chrome for iOS  |  Latest version  |   iOS iPad, iPhone  |
 |  Android Webkit  |  2.x and 4.x  |   Android  |
 
+### Internet Explorer Compatibility Mode
+
+Internet Explorer in compatibility mode is supported only as a secondary browser, regardless of version. When encountered we, recommend that compatibility mode is removed for MAS sites.
+
 **Latest version** - Where latest version is listed, it means the latest major stable version plus one major version back, as these browsers regularly self-update.
