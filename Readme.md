@@ -291,35 +291,35 @@ Additionally, browsers can only download a set number of assets "in parallel" wh
 We accept that the nature of the web is such that not all web pages can be produced uniformly and consistently across all browsers. The following browser support guidelines seek to address the trade-off between experience, reach and resources.
 
 ### Primary Browsers - supported
-All content must be readable and all functionality must work.
+All content must be readable and all functionality must work. The visual appearance of the site will be as intended (subject to minor browser / OS differences).
 
 | Browser name | Version | Platform  |
 | ------ | ------ | -----: |
-|  Internet Explorer  |  8,9,10 |   Windows  |
+|  Internet Explorer  |  9+ (including Edge) |   Windows  |
 |  Firefox  |  Latest version  |   Mac/Windows  |
 |  Chrome  |  Latest version |   Mac/Windows  |
 |  Safari  |  5.1+  |   Mac  |
 
 ### Secondary Browsers - partially supported
-All content must be readable and core functionality must work.
+All content must be readable and core functionality must work, however the appearance and layout of the site may not be completely optimal.
 
 | Browser name | Version | Platform  |
 | ------ | ------ | -----: |
-|  Internet Explorer  |  7  |   Windows  |
+|  Internet Explorer  |  8  |   Windows  |
 |  Opera  |  10+  |   Mac/Windows  |
 
 
-### Mobile browsers - supported as secondary browsers
-Follow secondary browser standards of performance and user experience.
+### Mobile browsers
+As of 2015 the MAS websites are built with a responsive layout and tested across a variety of mobile and tablet devices. Whilst minor visual differences may occur, the following are fully supported:
 
 | Browser name | Version | Platform  |
 | ------ | ------ | -----: |
-|  Safari for iOS  |  6+  |   iOS iPad, iPhone  |
+|  Safari for iOS  |  8+  |   iOS iPad, iPhone  |
 |  Chrome for iOS  |  Latest version  |   iOS iPad, iPhone  |
 |  Android Webkit  |  2.x and 4.x  |   Android  |
 
 ### Internet Explorer Compatibility Mode
 
-Internet Explorer in compatibility mode is supported only as a secondary browser, regardless of version. When encountered we, recommend that compatibility mode is removed for MAS sites.
+Internet Explorer in compatibility mode is supported only as a secondary browser, regardless of version. When encountered, we recommend that compatibility mode is removed for MAS sites.
 
 **Latest version** - Where latest version is listed, it means the latest major stable version plus one major version back, as these browsers regularly self-update.
