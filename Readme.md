@@ -5,9 +5,9 @@ This document contains guidelines for web pages and applications built by the Mo
 
 It is a living document that will be continually updated and improved.
 
-This document's primarily aims to achieve: 
-1) code consistency and establish 
-2) best practices. 
+This document primarily aims to achieve:
+1) code consistency and establish
+2) best practices.
 
 By maintaining consistency in coding style and convention, we can ease the burden of legacy code maintenance, and mitigate risk of breakage in the future. By adhering to best practices, we ensure optimised page loading, accessibility, performance and maintainable code.
 
@@ -41,7 +41,7 @@ We prefer readability over file-size savings when it comes to maintaining existi
 All static client-side files, such as CSS and JavaScript, are automatically minified as part of the Ruby on Rails asset pipeline.
 
 ## Progressive Enhancement
-Follow the principles of [progressive enhancement](https://www.gov.uk/service-manual/making-software/progressive-enhancement.html). Start by making sure your content is in the correct/logical order. Then select the most appropriate HTML elements and wai-aria atributes. Enhanced layout is then provided by externally linked CSS. Enhanced behaviour is provided by unobtrusive, externally linked JavaScript.
+Follow the principles of [progressive enhancement](https://www.gov.uk/service-manual/making-software/progressive-enhancement.html). Start by making sure your content is in the correct/logical order. Then select the most appropriate HTML elements and wai-aria attributes. Enhanced layout is then provided by externally linked CSS. Enhanced behaviour is provided by unobtrusive, externally linked JavaScript.
 
 ## HTML Markup
 ### HTML5
@@ -52,19 +52,19 @@ We test our markup against the [W3C validator](http://validator.w3.org/), to ens
 #### Quoting Attributes
 The HTML5 specification defines quotes around attributes as optional. For consistency with attributes that accept whitespace, all attributes should be quoted using double quotation marks.
 
-	<p class="line note" data-attribute="106">This is my paragraph of special text.</p>
+    <p class="line note" data-attribute="106">This is my paragraph of special text.</p>
 
 ### Doctype
 We use the HTML5 doctype by default.
 
-	<!DOCTYPE html>
+    <!DOCTYPE html>
 
 This allows us to use WAI-ARIA roles, microdata and validate our pages. This also triggers standards mode in the browser.
 
 ### Character Encoding
 All markup should be delivered as UTF-8, as it's the most friendly for internationalisation. We specify it in the head of the document
 
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
 ### General Markup Guidelines
 
@@ -110,15 +110,15 @@ Start by making sure your content is in the correct/logical order in your html d
 * Use [normalize.css](http://necolas.github.io/normalize.css/) to make rendering more consistent across browsers. This is automatically included as part of mas-assets (our gem containing shared client side assets).
 * Do not use presentational class names such as 'green'.
 * Any style you apply to :hover also apply to :focus so that keyboard users get the same visual cues.
-* Do not make your styles too specific - specifity wars are a maintanence nightmare!
+* Do not make your styles too specific - specificity wars are a maintenance nightmare!
 * Avoid using IDs (keeps specificity low and promotes reusability)
 * Instead of using content semantics for class names (e.g news) use intention and design patterns (e.g promo-box and carousel) to ensure reusability of the object.
-* Consider styling classes (.heading-secondary) instead of elements (h2) to promote reusablity and reduce tying design to document structure (which is very brittle). If directly styling elements inside components use child selectors where possible to reduce the depth of applicability - this is ensures that styles do not affect other unintended elements.
+* Consider styling classes (.heading-secondary) instead of elements (h2) to promote reusability and reduce tying design to document structure (which is very brittle). If directly styling elements inside components use child selectors where possible to reduce the depth of applicability - this is ensures that styles do not affect other unintended elements.
 * Use Sass to make your CSS more maintainable (see below).
  <!-- add something about using .no-js and .js-enhanced classes on the body element to enable contextual styling   -->
 
 ### B.E.M. Naming Convention
-We have started following the BEM (block, element, modifier) naming convention for assigning clear, conscise and semantic classes to our HTML elements.
+We have started following the BEM (block, element, modifier) naming convention for assigning clear, concise and semantic classes to our HTML elements.
 
 An explanation of BEM can be found on [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/):
 
@@ -138,7 +138,7 @@ A practical example of this is:
     .site-search__submit{} /* Element */
     .site-search--full{} /* Modifier */
 
-As noted in the CSS Wizardry article HTML elements marked up with the BEM naming convention can appear "ugly" and verbose. However, where they excell is in their readbility and their contribution to maintainable code.
+As noted in the CSS Wizardry article HTML elements marked up with the BEM naming convention can appear "ugly" and verbose. However, where they excel is in their readability and their contribution to maintainable code.
 
 However, please note that the BEM naming style does not need to be used for elements that have no relationship to parent elements or sit on their own. Remember that BEM is used to clarify code, not to be adhered to without question.
 
@@ -154,24 +154,24 @@ We follow the Sass communities "[Inception Rule](http://thesassway.com/beginner/
 
 Ideally you should aim for no more than two levels of nesting which gives enough flexibility for selectors and their accompanying pseudo-states (i.e :hover).
 
-Nesting selectors more than three levels deep, while tempting, causes verbose and unwieldly CSS to be constructed on compile.
+Nesting selectors more than three levels deep, while tempting, causes verbose and unwieldy CSS to be constructed on compile.
 
 Avoid using @mixins to reuse static snippets of code as it can result in bloated css. Instead use placeholder selectors in @extends (see: [Mastering Sass extends and placelholders](http://8gramgorilla.com/mastering-sass-extends-and-placeholders/)). Mixins should just be used when code changes due to a variable being passed in.
 
 The directory structure that we use for our Sass files is:
 
-	/base
-	/components
-	/lib
-	  _functions.css.scss
-	  _mixins.css.scss
-	  _placeholders.css.scss
-	  _variables.css.scss
-	/layout
+    /base
+    /components
+    /lib
+      _functions.css.scss
+      _mixins.css.scss
+      _placeholders.css.scss
+      _variables.css.scss
+    /layout
 
 **lib** directory contains all of the non printing styles - your tool chest - all of your functions, mixins, placeholders and variables.
 
-**base** directory contains all of the visual styles that are not layout or are specfic to a component/module/block - this includes font-face and default element styles
+**base** directory contains all of the visual styles that are not layout or are specific to a component/module/block - this includes font-face and default element styles
 
 **components** directory a file for each component/module/block. The name of the file is the same as the name of the block
 
@@ -194,11 +194,11 @@ Use [html5shiv](https://code.google.com/p/html5shiv/) to ensure html5 element wo
 
 ### General Coding Principles
 
-Touch the DOM as little as possible as it is VERY slow. Instead cache nodelists and insert HTML as few times as possible. 
+Touch the DOM as little as possible as it is VERY slow. Instead cache nodelists and insert HTML as few times as possible.
 
 We have recently decided to follow the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 
-### 
+###
 
 
 ## Accessibility
@@ -231,15 +231,15 @@ including by assistive technologies, without losing meaning.
 
 ### Common accessibility blunders include:
 
-* Content not being in a logical order in the document - as a developer has been concentrating on the visual layout rather then the content heirarchy.
+* Content not being in a logical order in the document - as a developer has been concentrating on the visual layout rather than the content hierarchy.
 * Not using alternative text ("alt") that conveys the meaning of an image appropriately.
-* Not having a text alternative for multimedia content -i.e captions and transcipts.
+* Not having a text alternative for multimedia content -i.e captions and transcripts.
 * Using jargon and complicated language instead of simple and clear language.
-* Not using headings correctly. A page should have one single h1 representing the page title. Other headings should be hierachical and allow a screen reader user to get an overview of the content on a page.
+* Not using headings correctly. A page should have one single h1 representing the page title. Other headings should be hierarchical and allow a screen reader user to get an overview of the content on a page.
 * Failing to use the most appropriate semantic elements to mark up content
 * Using too many lists and headings  which add aural clutter to screen reader users.
 * Failing to mark up forms correctly.
-* Communicating information by colour alone which will not be percieved by colour blind users.
+* Communicating information by colour alone which will not be perceived by colour blind users.
 * Not having a visual state that shows when a element has focus - i.e not styling :focus the same as :hover.
 * Only communicating states and actions visually - e.g selected, open, close. This also needs to be in the content/markup layer.
 * Failing to allow a keyboard user to access all content and functionally on a page - usually by using incorrect HTML elements, e.g spans and divs instead of links or buttons or by introducing keyboard traps with javascript.
@@ -261,13 +261,13 @@ Therefore if you are linking to the pages stylesheets at the bottom of a page it
 
 **Link to scripts from the bottom of the document** (before the closing body tag) as JavaScript blocks the browser from downloading assets until it has loaded any required scripts.
 
-A browser normally attempts to download as many assets as it can in parallel. JavaScript interupts this process.
+A browser normally attempts to download as many assets as it can in parallel. JavaScript interrupts this process.
 
 First, the browser assumes that any script being called may alter the page substantially and therefore prioritises loading the script before loading an asset.
 
 Secondly, scripts are downloaded asynchronously in order that a library like jQuery arrives before the script that relies on it (your plugin).
 
-In a nutshell - to render a page as fast as the browser will allow link to your styles in the head and to prevent JavaScript from stalling the rendering process, call scripts from the bottom. An excpetion is when creating contextual classes that are used for layout such as .js - these need to be in the head to prevent a flash of unstyled content.
+In a nutshell - to render a page as fast as the browser will allow link to your styles in the head and to prevent JavaScript from stalling the rendering process, call scripts from the bottom. An exception is when creating contextual classes that are used for layout such as .js - these need to be in the head to prevent a flash of unstyled content.
 
 ### HTTP Requests
 
