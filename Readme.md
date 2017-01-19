@@ -6,8 +6,15 @@ This document contains guidelines for web pages and applications built by the Mo
 It is a living document that will be continually updated and improved.
 
 This document primarily aims to achieve:
-1) code consistency and establish
-2) best practices.
+1) Code consistency,
+2) establish best practices and
+3) conform to accessibility standards
+
+Additionally, this document also serves to:
+
+* Aid in the on-boarding process and guide new developers.
+* Ensure ease of maintenance of front end code.
+* Encourage consistent conventions between team members.
 
 By maintaining consistency in coding style and convention, we can ease the burden of legacy code maintenance, and mitigate risk of breakage in the future. By adhering to best practices, we ensure optimised page loading, accessibility, performance and maintainable code.
 
@@ -118,7 +125,7 @@ Start by making sure your content is in the correct/logical order in your html d
  <!-- add something about using .no-js and .js-enhanced classes on the body element to enable contextual styling   -->
 
 ### B.E.M. Naming Convention
-We have started following the BEM (block, element, modifier) naming convention for assigning clear, concise and semantic classes to our HTML elements.
+We follow the BEM (block, element, modifier) naming convention for assigning clear, concise and semantic classes to our HTML elements.
 
 An explanation of BEM can be found on [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/):
 
@@ -214,6 +221,7 @@ We are working with the [Digital Accessibility Centre](http://www.digitalaccessi
 * Create content that can be presented in different ways,
 including by assistive technologies, without losing meaning.
 * Make it easier for users to see and hear content.
+* Make it easy for users to distiguish between colours, and that the contrast between colours meets the required ratio, see [WebAim Colour Contrast Checker](http://webaim.org/resources/contrastchecker/)
 
 #### Operable
 * Make all functionality available from a keyboard.
@@ -245,6 +253,7 @@ including by assistive technologies, without losing meaning.
 * Failing to allow a keyboard user to access all content and functionally on a page - usually by using incorrect HTML elements, e.g spans and divs instead of links or buttons or by introducing keyboard traps with javascript.
 * Failing to inform a screen reader user when content dynamically updates on a page.
 * Failing to set focus when dynamic content is loaded such as a modal box and not enabling a keyboard user to close such content.
+* Failing to provide an acceptable contrast ratio between colours.
 
 ### Resources
 * [WebAim](http://webaim.org/) - Information, training, resources, guidelines and standards for Web accessibility and disability access to the Web.
